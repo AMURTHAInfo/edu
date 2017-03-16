@@ -29,7 +29,7 @@ import com.wordnik.swagger.annotations.ApiOperation;
 public interface LoginWsInterface {
 
 	/**
-	 * To Save user time
+	 * To check user validity
 	 * 
 	 * @param loginId
 	 * @param password
