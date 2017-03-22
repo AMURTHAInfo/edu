@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<style> 
+p{
+	text-align: center;
+} 
+</style> 
+
+<h:body>
+	<f:facet name="last">
+		<h:outputStylesheet library="default" name="css/facescustom.css" />
+	</f:facet>
+	<ui:composition template="../template/common/commonLayout.xhtml">
+		<ui:define name="content">
+
+			<!-- main content -->
+			<div class="wrapper">
+				<div class="container-fluid animsition">
+					<div class="panel panel-default testPaper-panel"> 
+						<div class="panel-heading">
+							<h2 class="panel-title">Personal Information</h2>
+						</div>
+						<div id="content-2" class="panel-body commonscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
+
+
+
+						</div>
+						
+					</div>
+				</div>
+			</div>
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+
+</html>

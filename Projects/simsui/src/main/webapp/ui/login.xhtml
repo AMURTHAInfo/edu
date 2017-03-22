@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>SIMS</title>
+	<!-- Bootstrap -->
+	<!-- <link href="css/common/application.css" rel="stylesheet"></link> -->
+	<link href="css/plugins/bootstrap.min.css" rel="stylesheet"></link>
+	<link href="font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet"></link>
+	<!-- <link href="css/common/animsition.min.css" rel="stylesheet"></link> -->
+	<!-- <link href="css/common/jquery.mCustomScrollbar.css" rel="stylesheet"></link> -->
+	<!-- customized css file -->
+	<link href="css/sims/login.css" rel="stylesheet"></link>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/plugins/bootstrap.min.js"></script>
+	<script src="js/plugins/image.js"></script>
+	<script src="js/plugins/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="js/plugins/animsition.min.js"></script>
+	<script src="js/plugins/customanimation.js"></script>
+	<script src="js/plugins/jquery.min.js"></script>
+	<script src="js/plugins/jquery-1.11.2.min.js"></script>
+</h:head>
+
+<h:body>
+
+	<header>
+		<div class="navbar-fixed-top text-center">
+			<h1 style="color: #4B0082;">Student Information Management System</h1>
+		</div>
+	</header>
+	<main>
+	<div class="container-fluid sims-logformdiv">
+		<div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+		<div>
+			<h:form>
+				<div>
+					<label class="label-sims" for="simuserid"><h:outputText value="#{msg['sims.login.userId']}"/></label>
+				<!-- 	<input type="text" class="form-control sims-inputtextMB sims-inputtext" id="simuserid" placeholder="User Id"></input> -->
+					<p:inputText class="form-control  sims-inputtextMB sims-inputtext" id="simsuserid" p:placeholder="Login ID" value="#{user.loginId}"></p:inputText>
+				</div>
+				<div>
+					<label class="label-sims" for="simuserkey"><h:outputText value="#{msg['sims.login.password']}"/></label>
+					<!-- <input type="password" class="form-control sims-inputtextMB sims-inputtext" id="simuserkey" placeholder="Password"></input> -->
+					<p:password class="form-control sims-inputtextMB sims-inputtext" id="simsuserpassword" p:placeholder="Password"  value="#{user.password}"></p:password>
+				</div>
+				<div>
+					<div class="pull-left sims-forgotpw">
+						<p>
+							<a href="#"><h:outputText value="#{msg['sims.login.forgot_password']}"/></a>
+						</p>
+					</div>
+					<div class="pull-right sims-inputtextMT">
+						<h:commandButton class="btn btn-login btn-block sims-btn-log" value="#{msg['sims.login.sign_in']}" action="#{user.login}"></h:commandButton>
+					</div>
+				</div>
+			</h:form>
+		</div>
+		</div>
+	</div>
+	</main>
+	<footer class="sims-footer">
+	       Copyright © 2016 - 2017 SIMS LLC. All rights reserved.
+	</footer>
+				
+		  
+</h:body>
+
+</html>

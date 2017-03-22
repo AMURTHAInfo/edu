@@ -1,0 +1,29 @@
+
+.navbar-inverse {
+    background-color: #e2cdcd !important;
+}
+
+a {
+    color: #044073 !important;
+}
+
+#sidebar-wrapper {
+	background: #e2cdcd !important;
+}
+.navbar-fixed-bottom {
+    background: #e2cdcd !important;
+}
+#sidebar-wrapper {
+    height: 86.5% !important;
+    overflow-x: hidden !important;
+    background: #cfcfd0  !important;
+    top:60px !important;
+}
+
+.copyright {
+    color: #ea0b0b !important;
+}
+
+.sidenav-panel a span {
+	left:0px !important;
+}
