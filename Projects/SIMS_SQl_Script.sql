@@ -25,7 +25,7 @@ CREATE TABLE `user` (
 
 /* to inser the questiontype values*/
 use sims_service;
-INSERT INTO user (user_type,first_name,last_name,email,login_id,password) VALUES ('SuperAdmin','SuperAdmin','User','superadmin@evry.com','admin','admin');
+INSERT INTO user (user_type,first_name,last_name,email,login_id,password) VALUES ('SuperAdmin','SuperAdmin','User','superadmin@amurtha.com','admin','admin');
 
 
 
