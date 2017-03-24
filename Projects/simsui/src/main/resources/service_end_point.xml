@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service name="userLoginCheck" endpoint="http://localhost:8080/simsservice/webservice/webservice/loginWs/userLoginCheck"></service>
