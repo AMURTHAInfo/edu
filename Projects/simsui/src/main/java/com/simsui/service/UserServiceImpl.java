@@ -16,10 +16,14 @@ package com.simsui.service;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.simsui.common.SimsException;
 import com.simsui.model.UserModel;
+import com.simsui.webservice.UserWsImpl;
+import com.simsui.webservice.UserWsInterface;
 
 /**
  * @author Ninganna.c
@@ -28,6 +32,11 @@ import com.simsui.model.UserModel;
 @Service
 public class UserServiceImpl implements UserServiceInterface {
 
+	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
+
+	//@Autowired
+	private UserWsInterface userWsInterface=new UserWsImpl();
+	
 	/* (non-Javadoc)
 	 * @see com.simsui.service.UserServiceInterface#addUser(com.smisui.model.UserModel)
 	 */
@@ -51,8 +60,8 @@ public class UserServiceImpl implements UserServiceInterface {
 	 */
 	@Override
 	public UserModel getUser(String loginId, String password) throws SimsException {
-		// TODO Auto-generated method stub
-		return null;
+		LOGGER.info("In UserServiceImpl : getUser");
+		return userWsInterface.getUser(loginId, password);
 	}
 
 	/* (non-Javadoc)

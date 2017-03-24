@@ -35,7 +35,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import com.simsui.common.FileOperations;
 import com.simsui.common.SimsException;
+import com.simsui.common.Utility;
 import com.simsui.model.UserModel;
 import com.simsui.service.UserServiceInterface;
 
@@ -346,6 +348,7 @@ public class UserController extends BaseController implements Serializable {
 		currentUser = SecurityUtils.getSubject();
 		try {
 			sessionUser = userServiceInterface.getUser(loginId, password);
+			System.out.println(sessionUser.getFirstName()+sessionUser.getServiceStaus());
 			setSession("ONLINETEST_USER", sessionUser);
 			HttpSession session = request.getSession();
 		} catch (SimsException e) {
@@ -358,10 +361,10 @@ public class UserController extends BaseController implements Serializable {
 		} catch (AuthenticationException ae) {
 		}
 		if (sessionUser != null) {
-			this.firstName = "Welcome " + this.getLoggedInUserFirstName();
+			/*this.firstName = "Welcome " + this.getLoggedInUserFirstName();
 			if (sessionUser.getUserType().equals("SuperAdmin")) {
 				accessSUPERADMIN = true;
-			}
+			}*/
 			return "homepage";
 		} else {
 			message = "LoginId or password do not match.";

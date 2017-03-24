@@ -6,12 +6,9 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
-
-<style> 
-p{
-	text-align: center;
-} 
-</style> 
+<h:head>
+	<script src="../js/sims/attendence.js"></script>
+</h:head>
 
 <h:body>
 	<f:facet name="last">
@@ -28,11 +25,11 @@ p{
 							<h2 class="panel-title">Attendence</h2>
 						</div>
 						<div id="content-2" class="panel-body commonscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
-
-
-
+							<div id="attendenceGridDiv">
+								<table id="atten_attendence_table"></table>
+								<div id="atten_attendfooter_div"></div>
+							</div>
 						</div>
-						
 					</div>
 				</div>
 			</div>

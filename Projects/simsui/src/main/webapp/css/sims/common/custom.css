@@ -3,20 +3,17 @@
     background-color: #e2cdcd !important;
 }
 
-a {
+/* a {
     color: #044073 !important;
-}
+} */
 
-#sidebar-wrapper {
-	background: #e2cdcd !important;
-}
 .navbar-fixed-bottom {
     background: #e2cdcd !important;
 }
 #sidebar-wrapper {
     height: 86.5% !important;
     overflow-x: hidden !important;
-    background: #cfcfd0  !important;
+    background: #957b7b  !important;
     top:60px !important;
 }
 
@@ -26,4 +23,8 @@ a {
 
 .sidenav-panel a span {
 	left:0px !important;
+}
+
+.sidebar-nav li a{
+	color: #e9e9e9 !important;
 }

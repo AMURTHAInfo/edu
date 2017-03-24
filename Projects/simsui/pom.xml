@@ -130,7 +130,17 @@
 			<artifactId>primefaces</artifactId>
 			<version>${primefaces.version}</version>
 		</dependency>
+<!-- 	<dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-rt-rs-extension-providers</artifactId>
+        <version>3.0.2</version>
+    </dependency>
 
+    <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-jaxrs</artifactId>
+        <version>1.9.0</version>
+    </dependency> -->
 
 		<!-- Apache Commons IO -->
 		<dependency>

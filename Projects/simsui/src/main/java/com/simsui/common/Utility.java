@@ -25,9 +25,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.StringTokenizer;
-
 import org.apache.log4j.Logger;
-
+import java.io.File;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
 /**
  * utility class for project common tasks 
  * @author Ninganna.c
@@ -696,7 +701,7 @@ public class Utility {
 					question = question.substring(0, i) + "&#192" + question.substring(i + 1);
 					i = i + 5;
 					break;
-				case 'Ã?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#193" + question.substring(i + 1);
 					i = i + 5;
 					break;
@@ -744,7 +749,7 @@ public class Utility {
 					question = question.substring(0, i) + "&#204" + question.substring(i + 1);
 					i = i + 5;
 					break;
-				case 'Ã?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#205" + question.substring(i + 1);
 					i = i + 5;
 					break;
@@ -752,11 +757,11 @@ public class Utility {
 					question = question.substring(0, i) + "&#206" + question.substring(i + 1);
 					i = i + 5;
 					break;
-				case 'Ã?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#207" + question.substring(i + 1);
 					i = i + 5;
 					break;
-				case 'Ã?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#208" + question.substring(i + 1);
 					i = i + 5;
 					break;
@@ -808,7 +813,7 @@ public class Utility {
 					question = question.substring(0, i) + "&#220" + question.substring(i + 1);
 					i = i + 5;
 					break;
-				case 'Ã?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#221" + question.substring(i + 1);
 					i = i + 5;
 					break;
@@ -972,7 +977,7 @@ public class Utility {
 					question = question.substring(0, i) + "&#8220" + question.substring(i + 1);
 					i = i + 6;
 					break;
-				case 'â€?':
+				case 'ï¿½?':
 					question = question.substring(0, i) + "&#8221" + question.substring(i + 1);
 					i = i + 6;
 					break;
@@ -1016,4 +1021,5 @@ public class Utility {
 			}
 			return question;
 		}
+		   
 }

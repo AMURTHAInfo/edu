@@ -26,7 +26,9 @@ public class UserModel implements java.io.Serializable {
 	private Date addedDate;
 	private String modifiedBy;
 	private Date modifiedDate;
-
+	private Boolean userStatus;
+	private String serviceStaus;
+	
 	public UserModel() {
 	}
 
@@ -151,6 +153,22 @@ public class UserModel implements java.io.Serializable {
 
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+	public Boolean getUserStatus() {
+		return userStatus;
+	}
+
+	public void setUserStatus(Boolean userStatus) {
+		this.userStatus = userStatus;
+	}
+
+	public String getServiceStaus() {
+		return serviceStaus;
+	}
+
+	public void setServiceStaus(String serviceStaus) {
+		this.serviceStaus = serviceStaus;
 	}
 
 }
