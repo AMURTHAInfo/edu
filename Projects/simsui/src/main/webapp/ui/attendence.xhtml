@@ -24,18 +24,26 @@
 						<div class="panel-heading">
 							<h2 class="panel-title">Attendence</h2>
 						</div>
+						<h:form id="atten_content_form">
 						<div id="content-2" class="panel-body commonscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
 							<div id="attendenceGridDiv">
 								<table id="atten_attendence_table"></table>
 								<div id="atten_attendfooter_div"></div>
 							</div>
 						</div>
+						<script src="../js/sims/attendence.js"></script>
+						<script>
+      									jQuery(document).ready(function() {
+      											alert("here attendence");
+      									 });
+						</script>
+						</h:form>
 					</div>
 				</div>
 			</div>
-
 		</ui:define>
 	</ui:composition>
+
 
 </h:body>
 

@@ -1,4 +1,5 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
+	alert("here we go");
             $("#atten_attendence_table").jqGrid({
                 url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
                 mtype: "GET",
@@ -16,4 +17,4 @@ $(document).ready(function () {
                 rowNum: 20,
                 pager: "#atten_attendfooter_div"
             });
-        });
+        });*/

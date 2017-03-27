@@ -67,12 +67,12 @@
 							<ul class="sidebar-nav">
 								<h:form>
 									<li><ui:fragment>
-											<h:commandLink action="personalInfo.xhtml"
+											<h:commandLink action="personalInfo.xhtml" onclick="loadjs()"
 												class="#{((view.viewId eq ('/ui/personalInfo.xhtml')) ? 'active' : 'inactive')}"
 												value="#{msg['sims.sidebar.personalinfo']}" />
 										</ui:fragment></li>
 									<li><ui:fragment>
-											<h:commandLink action="attendence.xhtml"
+											<h:commandLink action="attendence.xhtml" 
 												class="#{((view.viewId eq ('/ui/attendence.xhtml')) ? 'active' : 'inactive')}"
 												value="#{msg['sims.sidebar.attendence']}" />
 										</ui:fragment></li>
@@ -105,6 +105,9 @@
 	</div>
 
 	<script>
+		jQuery(document).ready(function() {
+				alert("here common")
+		 });
 		$("#menu-toggle").click(function(e) {
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
