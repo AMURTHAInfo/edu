@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import com.simsservice.common.SimsException;
 import com.simsservice.dao.LoginDaoInterface;
+import com.simsservice.model.UserModel;
 
 /**
  * @author Ninganna.c
@@ -36,7 +37,7 @@ public class LoginServiceImpl implements LoginServiceInterface {
 	/**
 	 * To check for the valid loginId and password
 	 */
-	public Boolean userLoginCheck(String loginId, String password) throws SimsException {
+	public UserModel userLoginCheck(String loginId, String password) throws SimsException {
 		LOGGER.info("TestUserTimeServiceImpl:addTime");
 		return loginDaoInterface.userLoginCheck(loginId, password);
 	}

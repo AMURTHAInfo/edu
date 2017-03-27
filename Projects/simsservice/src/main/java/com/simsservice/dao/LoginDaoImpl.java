@@ -23,6 +23,7 @@ import com.simsservice.common.AbstractHibernateUtil;
 import com.simsservice.common.SimsException;
 import com.simsservice.common.SqlDml;
 import com.simsservice.entity.User;
+import com.simsservice.model.UserModel;
 
 /**
  * @author Ninganna.c
@@ -34,19 +35,38 @@ public class LoginDaoImpl extends AbstractGenericDAOHibernate<String, String> im
 	private static final Logger LOGGER = Logger.getLogger(LoginDaoImpl.class);
 
 	@SuppressWarnings("unchecked")
-	public Boolean userLoginCheck(String loginId, String password) throws SimsException {
+	public UserModel userLoginCheck(String loginId, String password) throws SimsException {
 		LOGGER.info("In LoginDaoImpl : userLoginCheck");
+		User user;
+		List<User> userList;
+		UserModel userModel=new UserModel();
 		try {
-			List<User> userList = (List<User>) findByQueryParams(SqlDml.LOGGED_IN_USER, loginId, password);
-			if (userList.size() == 0) {
-				return false;
-			} else {
-				return true;
-			}
+			 userList = (List<User>) findByQueryParams(SqlDml.LOGGED_IN_USER, loginId, password);
 		} catch (SimsException e) {
-			throw e;
+			userModel.setUserStatus(false);
+			userModel.setServiceStaus(e.toString());
+			return userModel;
 		} finally {
 			AbstractHibernateUtil.closeSession();
+		}
+		
+		if (userList.size() == 0) {
+			userModel.setUserStatus(false);
+			userModel.setServiceStaus("No users found By this ID and Password");
+			return userModel;
+		} else {
+			user=userList.get(0);
+			if(user.getStatus()=="Y"){
+				userModel.setFirstName(user.getFirstName());
+				userModel.setLastName(user.getLastName());
+				userModel.setUserStatus(true);
+				return userModel;
+			}
+			else{
+				userModel.setUserStatus(false);
+				userModel.setServiceStaus("User account is deactivated !!");
+				return userModel;
+			}
 		}
 	}
 

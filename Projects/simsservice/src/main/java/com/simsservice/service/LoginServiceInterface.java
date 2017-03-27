@@ -15,6 +15,7 @@
 package com.simsservice.service;
 
 import com.simsservice.common.SimsException;
+import com.simsservice.model.UserModel;
 
 /**
  * @author Ninganna.c
@@ -28,6 +29,6 @@ public interface LoginServiceInterface {
 	 * @return
 	 * @throws SimsException
 	 */
-	public Boolean userLoginCheck(String loginId, String password)throws SimsException;
+	public UserModel userLoginCheck(String loginId, String password)throws SimsException;
 
 }

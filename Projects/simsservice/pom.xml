@@ -433,6 +433,6 @@
 		</profile>
 	</profiles>
   <build>
-    <finalName>simsser</finalName>
+    <finalName>simsservice</finalName>
   </build>
 </project>

@@ -20,6 +20,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.simsservice.common.RestServicesException;
 import com.simsservice.common.SimsException;
+import com.simsservice.model.UserModel;
 import com.simsservice.service.LoginServiceInterface;
 
 /**
@@ -41,8 +42,8 @@ public class LoginWsImpl implements LoginWsInterface {
 	public Response userLoginCheck(String loginId, String password) {
 		LOGGER.info("In LoginWsInterface : userLoginCheck");
 		try {
-			Boolean status = loginServiceInterface.userLoginCheck(loginId, password);
-			GenericEntity<Boolean> entity = new GenericEntity<Boolean>(status) {};
+			UserModel userModel = loginServiceInterface.userLoginCheck(loginId, password);
+			GenericEntity<UserModel> entity = new GenericEntity<UserModel>(userModel) {};
 			return Response.ok().entity(entity).build();
 		} catch (SimsException e) {
 			LOGGER.info("context", e);
