@@ -28,18 +28,23 @@
 	
 	<script src="jqueryUI/jquery-ui.min.js"></script>
 	
+	<!-- Data Tables -->
+	<script src="jquery.dataTables.min.js"></script>
+	<link href="jquery.dataTables.min.css" rel="stylesheet"></link>
+	
 	<script src="timeSheetEntry.js"></script>
+	<link href="timeSheetEntry.css" rel="stylesheet"></link>
+	
 
 </head>
 <body>
 
-	<div>
+	<div class="timeSheet_Entry_Div">
   		<div id="timeSheet_Tale_header" class="table-responsive">          
  			 <table class="table">
     			<thead>
       				<tr>
-				        <th><a href="#" id="timeSheet_prevWeek"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a>
-				        </th>
+				        <th><a href="#" id="timeSheet_prevWeek"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a></th>
 				        <th>Start Date:<input type="text" id="timeSheet_Startdate" disabled="disabled" class="timeSheet_Text"></th>
 				        <th></th>
 				        <th>End Date:<input type="text" id="timeSheet_Enddate" disabled="disabled" class="timeSheet_Text"></th>
@@ -49,10 +54,69 @@
 			    <tbody>
 			    </tbody>
 		    </table>
-			
-			
 		</div>
+		<div id="timeSheet_Table_Content" class="table-responsive">
+			<table id="timeSheet_Task_Tale" class="table">
+			    <thead>
+			      <tr>
+			        <th>Task Name</th><th>Status</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+				
+			    </tbody>
+			</table>
+		</div>
+	</div>
 	
+	<div id="timeSheet_EntryDilog_Div">
+		<div id="timeSheet_EntryDilog_Tale_header" class="table-responsive">          
+ 			 <table class="table">
+			    <tbody>
+			    <tr>
+			    	<td>Start Date:<input type="text" id="timeSheet_EntryDilog_Startdate" disabled="disabled" class="timeSheet_Text"></td>
+			    	<td>End Date:<input type="text" id="timeSheet_EntryDilog_Enddate" disabled="disabled" class="timeSheet_Text"></td>
+			    </tr>
+			    <tr>
+			    	<td>Task Name:<input type="text" id="timeSheet_EntryDilog_Taskname" disabled="disabled" class="timeSheet_Text"></td>
+			    	<td>Details:
+			    		<textarea rows="2" cols=""></textarea>
+			    	</td>
+			    </tr>
+			    </tbody>
+		    </table>
+		</div>
+		<div id="timeSheet_EntryDilog_Table_Content" class="table-responsive">
+			<table id="timeSheet_EntryDilog_Task_Tale" class="table tableDilg">
+			    <thead>
+			      <tr>
+			        <th>Activity</th><th>Sub Activity</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+					<tr>
+			      	<td>
+				    	<select id="timeSheet_EntryDilog_Activity">
+				    		<option></option>
+				    	</select>
+			    	</td>
+			    	<td>
+			    		<select id="timeSheet_EntryDilog_Subactivity">
+				    		<option></option>
+				    	</select>
+			    	</td>
+			    	<td><input type="text" id="timeSheet_monHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_tueHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_wedHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_thuHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_friHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_satHour" class="timeSheet_Hour"></td>
+			    	<td><input type="text" id="timeSheet_sunHour" class="timeSheet_Hour"></td>
+			    	<td><button type="button" id="timeSheet_EntryDilog_Add" class="btn btn-primary">Add</button></td>
+			      </tr>
+			    </tbody>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

@@ -1,0 +1,67 @@
+.timeSheet_Entry_Div{
+	width:80%;
+	margin-left: 10%;
+    margin-top: 2%;
+}
+.timeSheet_Hour{
+	width: 71%;
+}
+ 
+ .tableDilg > tbody > tr > td {
+ 	padding-bottom:8px !important;
+ 	padding-top:8px !important;
+ }   
+.table-task, .table-task>td, .table-task>th {
+    background-color: rgba(0,0,0,.075);
+}
+
+.table-crs, .table-crs>td, .table-crs>th {
+    background-color: #dff0d8;
+}
+
+.table-defect, .table-defect>td, .table-defect>th {
+    background-color: #d9edf7;
+}
+
+.table-warning, .table-warning>td, .table-warning>th {
+    background-color: #fcf8e3;
+}
+
+
+table {
+    width: 40em;
+    margin: 2em auto;
+}
+
+thead {
+    
+}
+td {
+    width: 10em;
+    padding: 0.3em;
+}
+
+tbody {
+    
+}
+
+div.pager {
+    text-align: center;
+    margin: 1em 0;
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #c00;
+}
