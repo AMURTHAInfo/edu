@@ -28,33 +28,35 @@
 	
 	<script src="jqueryUI/jquery-ui.min.js"></script>
 	
+	<!-- pnotify -->
+	<script type="text/javascript" src="pnotify.js"></script>
+	<link href="pnotify.css" media="all" rel="stylesheet" type="text/css" />
+	
 	<!-- Data Tables -->
 	<script src="jquery.dataTables.min.js"></script>
-	<link href="jquery.dataTables.min.css" rel="stylesheet"></link>
+	<!-- <link href="jquery.dataTables.min.css" rel="stylesheet"></link> -->
 	
 	<script src="timeSheetEntry.js"></script>
-	<link href="timeSheetEntry.css" rel="stylesheet"></link>
+	<link href="timeSheetEntry.css" rel="stylesheet"></link> 
 	
 
 </head>
 <body>
 
 	<div class="timeSheet_Entry_Div">
-  		<div id="timeSheet_Tale_header" class="table-responsive">          
- 			 <table class="table">
-    			<thead>
-      				<tr>
-				        <th><a href="#" id="timeSheet_prevWeek"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a></th>
-				        <th>Start Date:<input type="text" id="timeSheet_Startdate" disabled="disabled" class="timeSheet_Text"></th>
-				        <th></th>
-				        <th>End Date:<input type="text" id="timeSheet_Enddate" disabled="disabled" class="timeSheet_Text"></th>
-				        <th><a href="#" id="timeSheet_nextWeek"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a></th>
-				    </tr>
-				</thead>
-			    <tbody>
-			    </tbody>
-		    </table>
-		</div>
+  		<div id="timeSheet_Tale_header" class="table-responsive" style="width:100%;padding-left: 15%;">
+  			<div style="float:left;width:50%">
+  				<a href="#" id="timeSheet_prevWeek"><span><i class="fa fa-chevron-left" aria-hidden="true"></i></span></a>
+  				<label for="timeSheet_Startdate">Start Date:</label>
+  				<input type="text" name="timeSheet_Startdate" id="timeSheet_Startdate" disabled="disabled" class="timeSheet_Text">
+  			</div>
+  			<div style="float:left;width:50%">
+  				<label for="timeSheet_Enddate">Start Date:</label>
+  				<input type="text" name="timeSheet_Enddate" id="timeSheet_Enddate" disabled="disabled" class="timeSheet_Text">
+  				<a href="#" id="timeSheet_nextWeek"><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>
+  			</div>
+  		</div>          
+
 		<div id="timeSheet_Table_Content" class="table-responsive">
 			<table id="timeSheet_Task_Tale" class="table">
 			    <thead>
@@ -65,32 +67,41 @@
 			    <tbody>
 				
 			    </tbody>
+			    <tfoot>
+			    	<tr><th></th><th>Total :</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+			    </tfoot>
 			</table>
 		</div>
 	</div>
 	
 	<div id="timeSheet_EntryDilog_Div">
-		<div id="timeSheet_EntryDilog_Tale_header" class="table-responsive">          
- 			 <table class="table">
-			    <tbody>
-			    <tr>
-			    	<td>Start Date:<input type="text" id="timeSheet_EntryDilog_Startdate" disabled="disabled" class="timeSheet_Text"></td>
-			    	<td>End Date:<input type="text" id="timeSheet_EntryDilog_Enddate" disabled="disabled" class="timeSheet_Text"></td>
-			    </tr>
-			    <tr>
-			    	<td>Task Name:<input type="text" id="timeSheet_EntryDilog_Taskname" disabled="disabled" class="timeSheet_Text"></td>
-			    	<td>Details:
-			    		<textarea rows="2" cols=""></textarea>
-			    	</td>
-			    </tr>
-			    </tbody>
-		    </table>
+		<div id="timeSheet_EntryDilog_Tale_header" style="width:100%" class="table-responsive">  
+			<div style="float:left;width:50%">
+				<label for="timeSheet_EntryDilog_Startdate">Start Date:</label>
+				<input type="text" name="timeSheet_EntryDilog_Startdate" id="timeSheet_EntryDilog_Startdate" disabled="disabled" 
+						class="timeSheet_Text" style="margin-left: 3%;margin-bottom: 5%;">
+				<br>
+				<label for="timeSheet_EntryDilog_Enddate">End Date:</label>
+				<input type="text" name="timeSheet_EntryDilog_Enddate" id="timeSheet_EntryDilog_Enddate" disabled="disabled" 
+						class="timeSheet_Text" style="margin-left: 4%;">
+			</div> 
+			<div style="float:left;width:50%">
+				<label for="timeSheet_EntryDilog_Taskname">Task Name:</label>
+				<input type="text" name="timeSheet_EntryDilog_Taskname" id="timeSheet_EntryDilog_Taskname" disabled="disabled" 
+						class="timeSheet_Text" style="margin-left: 3%;margin-bottom: 5%;">
+				<br>
+				<label for="timeSheet_EntryDilog_TaskDscrptn" style="margin-top: 1%;position: absolute;">Details:</label>
+				<textarea rows="2" cols="" name="timeSheet_EntryDilog_TaskDscrptn" id="timeSheet_EntryDilog_TaskDscrptn" 
+						style="margin-left: 24%;"></textarea>
+			</div>       
 		</div>
 		<div id="timeSheet_EntryDilog_Table_Content" class="table-responsive">
-			<table id="timeSheet_EntryDilog_Task_Tale" class="table tableDilg">
+			<table id="timeSheet_EntryDilog_Task_Tale" class="table tableDilg" style="margin:0px">
 			    <thead>
 			      <tr>
-			        <th>Activity</th><th>Sub Activity</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+			        <th>Activity</th><th style="display:none">Activity Id</th><th>Sub Activity</th>
+			        <th style="display:none">Sub Activity Id</th><th>Mon</th><th>Tue</th><th>Wed</th>
+			        <th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th><th>Actions</th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -112,8 +123,56 @@
 			    	<td><input type="text" id="timeSheet_friHour" class="timeSheet_Hour"></td>
 			    	<td><input type="text" id="timeSheet_satHour" class="timeSheet_Hour"></td>
 			    	<td><input type="text" id="timeSheet_sunHour" class="timeSheet_Hour"></td>
-			    	<td><button type="button" id="timeSheet_EntryDilog_Add" class="btn btn-primary">Add</button></td>
+			    	<td><button type="button" id="timeSheet_EntryDilog_Add" class="btn btn-primary" style="padding:1% 10% 1% 10%">Add</button></td>
 			      </tr>
+			    </tbody>
+			</table>
+		</div>
+	</div>
+
+	<div id="timeSheet_EntryDilog2_Div">
+		<div style="width:100%">
+			<div style="float:left;width:50%">
+				<label for="timeSheet_EntryDilog2_Taskname">Task Name:</label>
+				<input type="text" name="timeSheet_EntryDilog2_Taskname" id="timeSheet_EntryDilog2_Taskname" class="timeSheet_Text" disabled="disabled"
+						style="margin-bottom: 5%;margin-left: 3%;">
+				<br>
+				<label for="timeSheet_EntryDilog2_Activity">Activity:</label>
+				<select id="timeSheet_EntryDilog2_Activity" style="margin-left: 11%;margin-bottom: 5%;">
+		    		<option></option>
+		    	</select>
+		    	<br>
+				<label for="timeSheet_EntryDilog2_THour">Task Time:</label>
+				<input type="text" name="timeSheet_EntryDilog2_THour" id="timeSheet_EntryDilog2_THour" class="timeSheet_Text" style="width: 10%;margin-left: 5%;">Hr
+				<input type="text" name="timeSheet_EntryDilog2_TMin" id="timeSheet_EntryDilog2_TMin" class="timeSheet_Text" style="width: 10%;">Min
+			</div>
+			<div style="float:left;width:50%">
+				<label for="timeSheet_EntryDilog2_Date">Date:</label>
+				<input type="text" name="timeSheet_EntryDilog2_Date" id="timeSheet_EntryDilog2_Date"  class="timeSheet_Text" disabled="disabled"
+						style="margin-bottom: 5%;margin-left: 10%;">
+				<br>
+				<label for="timeSheet_EntryDilog2_Subactivity">Sub Activity:</label>
+				<select id="timeSheet_EntryDilog2_Subactivity" style="margin-left: 0%;margin-bottom: 5%;">
+		    		<option></option>
+		    	</select>
+				<br>
+				<label for="timeSheet_EntryDilog2_TaskDscrptn" style="margin-top: 1%;position: absolute;">Details:</label>
+				<textarea rows="2" cols="" name="timeSheet_EntryDilog2_TaskDscrptn" id="timeSheet_EntryDilog2_TaskDscrptn" 
+						style="margin-left: 24%;"></textarea>
+				<label></label>
+			</div>
+			<button type="button" id="timeSheet_EntryDilog2_Save" class="btn btn-primary" style="margin-left: 40%;">Save</button>
+		</div>
+		<div id="timeSheet_EntryDilog2_Table_Content" class="table-responsive">
+			<table id="timeSheet_EntryDilog2_Task_Tale" class="table tableDilg" style="margin:0px">
+			    <thead>
+			      <tr>
+			        <th>Activity</th><th style="display:none">Activity Id</th><th>Sub Activity</th>
+			        <th style="display:none">Sub Activity Id</th><th>Time</th><th>Details</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+
 			    </tbody>
 			</table>
 		</div>
