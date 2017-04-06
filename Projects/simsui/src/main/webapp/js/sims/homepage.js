@@ -18,8 +18,8 @@ ajaxCall_01(profile_url,{firstname :"fgs",lastname :"fa"},"POST",function(data){
 //another way of callinf ajax
 ajaxCall_01(profile_url,{firstname :"fgs",lastname :"fa"},"POST",onSucess,onError)
 function onSucess(data){
-	alert(data)
+	console.info(data)
 }
 function onError(data){
-	alert(data)
+	console.error(data)
 }

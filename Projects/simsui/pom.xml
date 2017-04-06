@@ -10,7 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<junit.version>4.11</junit.version>
-		<java.version>1.7</java.version>
+		<java.version>1.8</java.version>
 		<asmVersion>5.0.4</asmVersion>
 		<jetty.port>8765</jetty.port>
 		<jetty.version>7.6.3.v20120416</jetty.version>
@@ -18,11 +18,11 @@
 		<jsf-api.version>2.2.9</jsf-api.version>
 		<jsf-impl.version>2.2.9</jsf-impl.version>
 		<tomahawk20.version>1.1.10</tomahawk20.version>
-		<cxf-rt-transports.version>2.7.11</cxf-rt-transports.version>
-		<cxf-rt-frontend.version>2.7.11</cxf-rt-frontend.version>
-		<cxf-rt-core.version>2.7.11</cxf-rt-core.version>
-		<cxf-rt-bindings.version>2.7.11</cxf-rt-bindings.version>
-		<cxf-api.version>2.7.11</cxf-api.version>
+		<cxf-rt-transports.version>2.7.16</cxf-rt-transports.version>
+		<cxf-rt-frontend.version>2.7.16</cxf-rt-frontend.version>
+		<cxf-rt-core.version>2.7.16</cxf-rt-core.version>
+		<cxf-rt-bindings.version>2.7.16</cxf-rt-bindings.version>
+		<cxf-api.version>2.7.16</cxf-api.version>
 		<primefaces.version>4.0</primefaces.version>
 		<commons-io.version>1.3.2</commons-io.version>
 		<fileupload.version>1.2.1</fileupload.version>
@@ -31,16 +31,16 @@
 		<commons-digester.version>2.1</commons-digester.version>
 		<el-ri.version>1.0</el-ri.version>
 		<commons-logging.version>1.2</commons-logging.version>
-		<spring-aop.version>3.2.6.RELEASE</spring-aop.version>
-		<spring-aspects.version>3.2.6.RELEASE</spring-aspects.version>
-		<spring-beans.version>3.2.6.RELEASE</spring-beans.version>
-		<spring-context.version>3.2.6.RELEASE</spring-context.version>
-		<spring-context-support.version>3.2.6.RELEASE</spring-context-support.version>
-		<spring-core.version>3.2.6.RELEASE</spring-core.version>
-		<spring-expression.version>3.2.6.RELEASE</spring-expression.version>
-		<spring-tx.version>3.2.6.RELEASE</spring-tx.version>
-		<spring-web.version>3.2.6.RELEASE</spring-web.version>
-		<spring-webmvc.version>3.2.6.RELEASE</spring-webmvc.version>
+		<spring-aop.version>4.0.0.RELEASE</spring-aop.version>
+		<spring-aspects.version>4.0.0.RELEASE</spring-aspects.version>
+		<spring-beans.version>4.0.0.RELEASE</spring-beans.version>
+		<spring-context.version>4.0.0.RELEASE</spring-context.version>
+		<spring-context-support.version>4.0.0.RELEASE</spring-context-support.version>
+		<spring-core.version>4.0.0.RELEASE</spring-core.version>
+		<spring-expression.version>4.0.0.RELEASE</spring-expression.version>
+		<spring-tx.version>4.0.0.RELEASE</spring-tx.version>
+		<spring-web.version>4.0.0.RELEASE</spring-web.version>
+		<spring-webmvc.version>4.0.0.RELEASE</spring-webmvc.version>
 		<jsr311-api.version>1.1.1</jsr311-api.version>
 		<json.version>2.0</json.version>
 		<jersey-server.version>1.19</jersey-server.version>
@@ -53,8 +53,8 @@
 		<swagger-jaxrs_2.10.version>1.3.13</swagger-jaxrs_2.10.version>
 		<swagger-core_2.10.version>1.3.13</swagger-core_2.10.version>
 		<jackson-jaxrs.version>1.1.1</jackson-jaxrs.version>
-		<spring-jdbc.version>3.2.6.RELEASE</spring-jdbc.version>
-		<spring-orm.version>3.2.6.RELEASE</spring-orm.version>
+		<spring-jdbc.version>4.0.0.RELEASE</spring-jdbc.version>
+		<spring-orm.version>4.0.0.RELEASE</spring-orm.version>
 		<hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
 		<hibernate-core.version>4.2.8.Final</hibernate-core.version>
 		<log4j.version>1.2.17</log4j.version>
@@ -68,8 +68,8 @@
 		<poi-ooxml-schemas.version>3.13</poi-ooxml-schemas.version>
 		<poi-ooxml.version>3.13</poi-ooxml.version>
 		<poi.version>3.13</poi.version>
-		<!--<cxf.version>2.7.11</cxf.version> -->
-		<!--<spring.version>3.2.6.RELEASE</spring.version> -->
+		<!--<cxf.version>2.7.16</cxf.version> -->
+		<!--<spring.version>4.0.0.RELEASE</spring.version> -->
 		<!--<primefaces.version>5.0</primefaces.version> -->
 		<!--<mojarra.version>2.2.5</mojarra.version> -->
 		<!--<hibernate.validator.version>4.3.0.Final</hibernate.validator.version> -->
@@ -246,7 +246,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring-orm.version}</version>
 		</dependency>
-
+	<!-- spring framework -->
+	<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.8.10</version>
+		</dependency>
 		<!-- rest web services -->
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
@@ -398,9 +404,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>javax.enterprise</groupId>
-			<artifactId>cdi-api</artifactId>
-			<version>1.0-SP1</version>
+		   <groupId>javax.enterprise</groupId>
+		   <artifactId>cdi-api</artifactId>
+		   <version>1.2</version>
+		   <scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
@@ -445,47 +452,15 @@
   <build>
     <finalName>simsui</finalName>
     <plugins>
-    			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>${jetty.version}</version>
-				<configuration>
-					<useTestScope>true</useTestScope>
-					<useProvidedScope>true</useProvidedScope>
-					<webAppConfig>
-						<contextPath>/onlinetest</contextPath>
-					</webAppConfig>
-					<connectors>
-						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
-							<port>${jetty.port}</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>org.glassfish.web</groupId>
-						<artifactId>el-impl</artifactId>
-						<version>${el-impl.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>javax.el</groupId>
-						<artifactId>el-api</artifactId>
-						<version>${el-api.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-<!-- 			<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.6.1</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
-			</plugin> -->
-
+			</plugin>
 		</plugins> 
   </build>
 </project>

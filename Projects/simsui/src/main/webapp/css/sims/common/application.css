@@ -730,6 +730,18 @@ max-height: 409px;
 overflow: hidden;
 overflow-y: auto;}
 
+.formscroll{
+	padding: 15px;
+	max-height: 732px;
+	min-height: 732px;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+.selectdropdown{
+	width:150px;
+}
+
 .home-row{
 	margin-right:0 !important;
 }

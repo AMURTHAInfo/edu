@@ -13,35 +13,38 @@
 	
 	<!-- Bootstrap -->
 	<link href="../css/plugins/bootstrap.min.css" rel="stylesheet"></link>
+	
+	<!-- Jquery UI plugins -->
+	
+	<link href="../css/plugins/jqueryUI/jquery-ui.min.css" rel="stylesheet"></link>
+	<link href="../css/plugins/jqueryUI/jquery-ui.structure.min.css" rel="stylesheet"></link>
+	<link href="../css/plugins/jqueryUI/jquery-ui.theme.min.css" rel="stylesheet"></link>
+	<link href="../font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet"></link>
+		<link rel="stylesheet" type="text/css" media="screen" href="../css/plugins/jqgrid/ui.jqgrid.css" />
+	<link href="../css/plugins/jquery.multiselect.css" rel="stylesheet"/>
+	<link href="../css/plugins/jquery.multiselect.filter.css" rel="stylesheet"/>
+	
+	<!-- Jqgrid plugins -->
+
  	<link href="../css/sims/common/application.css" rel="stylesheet"></link>
  	<link href="../css/sims/common/custom.css" rel="stylesheet"></link> 
-	<link href="../font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet"></link>
-	
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script	src="../js/plugins/jquery.min.js"></script>
 	
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../js/plugins/jqueryUI/jquery-ui.min.js"></script>
 	<script src="../js/plugins/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.multiselect.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery.multiselect.filter.min.js"></script>
+	<script src="../js/plugins/jqgrid/grid.locale-en.js" type="text/javascript"></script>
+	<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
+	
 	<script src="../js/plugins/image.js"></script>
 	<script src="../js/plugins/animsition.min.js"></script>
 	<script src="../js/plugins/customanimation.js"></script>
-	<script src="../js/plugins/scroll.js"></script>
 	<script src="../js/plugins/filterLegend.js"></script>
 	<script src="../js/plugins/filterReport.js"></script>
-	
-	<!-- Jquery UI plugins -->
-	<link href="../css/plugins/jqueryUI/jquery-ui.min.css" rel="stylesheet"></link>
-	<link href="../css/plugins/jqueryUI/jquery-ui.structure.min.css" rel="stylesheet"></link>
-	<link href="../css/plugins/jqueryUI/jquery-ui.theme.min.css" rel="stylesheet"></link>
-	
-	<script src="../js/plugins/jqueryUI/jquery-ui.min.js"></script>
-	
-	<!-- Jqgrid plugins -->
-	<link rel="stylesheet" type="text/css" media="screen" href="../css/plugins/jqgrid/ui.jqgrid.css" />
-	
-	<script src="../js/plugins/jqgrid/grid.locale-en.js" type="text/javascript"></script>
-	<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js" type="text/javascript"></script>
-
 	<!-- common js files include here -->
 	<script src="../js/sims/common/ajaxCallsFxn.js"></script>
 	<script src="../js/sims/common/ajaxCallsUrls.js"></script>
@@ -106,36 +109,12 @@
 
 	<script>
 		jQuery(document).ready(function() {
-				alert("here common")
+				console.info("here common")
 		 });
 		$("#menu-toggle").click(function(e) {
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
-	</script>
-	<script>
-	/*	
-	(function($) {
-			$(window).load(function() {
-
-				$("#content-2").mCustomScrollbar({
-					scrollButtons : {
-						enable : true
-					},
-					theme : "light-thick",
-					scrollbarPosition : "outside"
-				});
-				$("#content-3").mCustomScrollbar({
-					scrollButtons : {
-						enable : true
-					},
-					theme : "light-thick",
-					scrollbarPosition : "outside"
-				});
-
-			});
-		})(jQuery);
-	*/
 	</script>
 </h:body>
 </html>

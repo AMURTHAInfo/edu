@@ -6,9 +6,6 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<script src="../js/sims/attendence.js"></script>
-</h:head>
 
 <h:body>
 	<f:facet name="last">
@@ -25,26 +22,22 @@
 							<h2 class="panel-title">Attendence</h2>
 						</div>
 						<h:form id="atten_content_form">
-						<div id="content-2" class="panel-body commonscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
-							<div id="attendenceGridDiv">
+						<div id="content-2" class="panel-body formscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
+						<div class="selectdropdown">
+							<select id="attendanceYear">
+							</select>
+						</div>
+							<div id="attendenceGridDiv" style="margin-top:25px;">
 								<table id="atten_attendence_table"></table>
-								<div id="atten_attendfooter_div"></div>
 							</div>
 						</div>
-						<script src="../js/sims/attendence.js"></script>
-						<script>
-      									jQuery(document).ready(function() {
-      											alert("here attendence");
-      									 });
-						</script>
 						</h:form>
 					</div>
 				</div>
 			</div>
+			<script src="../js/sims/attendence.js"></script>
 		</ui:define>
 	</ui:composition>
-
-
 </h:body>
 
 </html>
