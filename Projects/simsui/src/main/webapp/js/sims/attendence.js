@@ -1,23 +1,4 @@
-/*$(document).ready(function () {
-	alert("here we go");
-            $("#atten_attendence_table").jqGrid({
-                url: 'http://trirand.com/blog/phpjqgrid/examples/jsonp/getjsonp.php?callback=?&qwery=longorders',
-                mtype: "GET",
-                datatype: "jsonp",
-                colModel: [
-                    { label: 'OrderID', name: 'OrderID', key: true, width: 75 },
-                    { label: 'Customer ID', name: 'CustomerID', width: 150 },
-                    { label: 'Order Date', name: 'OrderDate', width: 150 },
-                    { label: 'Freight', name: 'Freight', width: 150 },
-                    { label:'Ship Name', name: 'ShipName', width: 150 }
-                ],
-				viewrecords: true,
-                width: 780,
-                height: 250,
-                rowNum: 20,
-                pager: "#atten_attendfooter_div"
-            });
-        });*/
+
 $(document).ready(function() {
 	$("#attendanceYear").multiselect({
 		multiple: false,
@@ -31,7 +12,6 @@ $(document).ready(function() {
 
 function attendanceRecord(){
 	console.info("attendance");
-	//$("#atten_attendence_table").jqGrid("GridUnload");
 	var sampleData = '[{"month":"January"},{"month":"Febrauary"},{"month":"March"},{"month":"April"},{"month":"May"},{"month":"June"},{"month":"July"},{"month":"August"},{"month":"September"},{"month":"October"},{"month":"November"},{"month":"December"}]';
 	
 	$.jgrid.gridUnload("#atten_attendence_table");

@@ -7,11 +7,11 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:f="http://java.sun.com/jsf/core">
 
-<style> 
-p{
+<style>
+p {
 	text-align: center;
-} 
-</style> 
+}
+</style>
 
 <h:body>
 	<f:facet name="last">
@@ -23,20 +23,81 @@ p{
 			<!-- main content -->
 			<div class="wrapper">
 				<div class="container-fluid animsition">
-					<div class="panel panel-default testPaper-panel"> 
+					<div class="panel panel-default testPaper-panel">
 						<div class="panel-heading">
 							<h2 class="panel-title">Personal Information</h2>
 						</div>
-						<div id="content-2" class="panel-body commonscroll mCustomScrollbar light" data-mcs-theme="minimal-dark">
-
-
-
+						<div id="content-2"
+							class="panel-body formscroll mCustomScrollbar light custom-panel-pad"
+							data-mcs-theme="minimal-dark">
+							<div class="row form-group">
+								<div class="col-sm-4 col-md-4 custom-padzero">
+									<label>Branch</label> <select
+										class="form-control custom-select" id="ad_selbranch"></select>
+								</div>
+								<div class="col-sm-4 col-md-4 custom-padzero pull-right clear-float">
+									<label>Semester</label> <select
+										class="form-control custom-select" id="ad_selsem"></select>
+								</div>
+							</div>
+							<div class="row form-group" id="subListGridDiv"
+								style="margin-top: 25px;">
+								<div>
+									<table id="subjectList_table"></table>
+									<div id="subjectListPager"></div>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div>
+									<button class="btn btn-default pull-right clear-float" id="ad_courseadd">ADD</button>
+								</div>
+							</div>
+							<form id="addcourseform">
+								<div class="row form-div">
+									<div class="custom-clear form-group">
+										<div class="col-sm-4 col-md-4 custom-padzero">
+											<label>Branch</label> <select
+												class="form-control custom-select" id="ad_edubranch"></select>
+										</div>
+										<div class="col-sm-4 col-md-4 custom-padzero pull-right clear-float">
+											<label>Semester</label> <select
+												class="form-control custom-select" id="ad_edusem"></select>
+										</div>
+									</div>
+									<div class="custom-clear form-group">
+										<div class="col-sm-4 col-md-4 custom-padzero">
+											<label>Subject</label> <input class="form-control"
+												id="ad_edusubject" />
+										</div>
+										<div class="col-sm-4 col-md-4 custom-padzero pull-right clear-float">
+											<label>Subject Code</label> <input class="form-control"
+												id="ad_edusubcode" />
+										</div>
+									</div>
+									<div class="custom-clear form-group">
+										<div class="col-sm-4 col-md-4 custom-padzero">
+											<label>Details</label>
+											<textarea class="form-control" id="ad_edudet" rows="1"
+												cols="1"></textarea>
+										</div>
+										<div class="col-sm-4 col-md-4 custom-padzero pull-right clear-float">
+											<label>Upload</label> <label class="custom-file"> <input
+												type="file" id="file" class="custom-file-input"></input> <span
+												class="custom-file-control"></span></label>
+										</div>
+									</div>
+									<div class="custom-clear form-submit">
+										<button class="btn btn-default" id="submitcourseform">SUBMIT</button>
+										<button class="btn btn-default" id="resetcourseform">RESET</button>
+									</div>
+								</div>
+							</form>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
-
+			<script src="../js/sims/subjectForm.js"></script>
 		</ui:define>
 	</ui:composition>
 
