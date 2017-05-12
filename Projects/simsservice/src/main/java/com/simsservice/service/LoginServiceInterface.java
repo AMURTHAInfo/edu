@@ -14,7 +14,11 @@
  */
 package com.simsservice.service;
 
+import java.util.List;
+
 import com.simsservice.common.SimsException;
+import com.simsservice.entity.Employee;
+import com.simsservice.model.ServiceStatus;
 import com.simsservice.model.UserModel;
 
 /**
@@ -31,4 +35,24 @@ public interface LoginServiceInterface {
 	 */
 	public UserModel userLoginCheck(String loginId, String password)throws SimsException;
 
+	/**
+	 * @param loginId
+	 * @param password
+	 * @return
+	 * @throws SimsException
+	 */
+	public Employee addEmployee(Employee employee) throws SimsException;
+
+	/**
+	 * @return
+	 * @throws SimsException
+	 */
+	public List<Employee> getAllEmployees() throws SimsException;
+
+	/**
+	 * @param employeeId
+	 * @return
+	 * @throws SimsException
+	 */
+	public ServiceStatus deleteEmployee(Long employeeId) throws SimsException;
 }

@@ -28,7 +28,7 @@
 
 	<!-- Rest Service Beans Start Here -->
 	<bean id="loginWebService" class="com.simsservice.webservice.LoginWsImpl"/>
-	
+	<bean id="designationWebService" class="com.simsservice.webservice.DesignationWsImpl"/>
 	<!-- Swagger API listing resource -->
 	<bean id="swaggerResourceJSON" class="com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON" />
 
@@ -40,6 +40,7 @@
 		<jaxrs:serviceBeans>
 			<ref bean="swaggerResourceJSON" />
 			<ref bean="loginWebService" />
+			<ref bean="designationWebService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
