@@ -1,0 +1,32 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.date1 = "2017-06-03";
+
+    });
+</script>
+<body>
+<h3>Angula JS Filters</h3>
+
+<div ng-app="App1" ng-controller="Ctrl1">
+
+    <!-- 1. yyyy-MM-ddTHH:mm:ss.sssZ  2. yyyy-MM-ddTHH:mmZ, 3. yyyy-MM-dd 4. yyyyMMddTHHmmssZ -->
+    <!-- {{ date_expression | date : format : timezone}}  -->
+
+    <span>{{date1 | date:'medium'}}</span><br>
+    <hr>
+    <span>{{date1 | date:'yyyy-MM-dd'}}</span><br>
+    <hr>
+    <span>{{date1 | date:'MM/dd/yyyy'}}</span><br>
+    <hr>
+    <span>{{date1 | date:"MMM d yyyy"}}</span><br>
+    <hr>
+    <span>{{date1 | date:"EEE MMM d yyyy"}}</span><br>
+
+
+</div>
+
+</body>
+</html>

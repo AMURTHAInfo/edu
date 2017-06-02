@@ -1,0 +1,66 @@
+<html>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<script>
+    var app = angular.module("App1", []);
+    var employees={ "1001":{"employeeName":"Jhon","dob":"09-09-1998","company":"Evry","sal":9000},
+        "1002":{"employeeName":"Peter","dob":"19-04-1996","company":"Evry","sal":6000},
+        "1003":{"employeeName":"Kate","dob":"29-06-1990","company":"Evry","sal":8000}};
+
+    app.controller('Ctrl1', ['$scope',function(sc1) {
+        sc1.doSearch=function(){
+            var emploee= employees[sc1.employeeSearchId];
+            if(emploee != undefined){
+                sc1.employeeName=emploee.employeeName;
+                sc1.dob=emploee.dob;
+                sc1.company=emploee.company;
+                sc1.sal=emploee.sal;
+            }
+            else{
+                sc1.employeeName="";
+                sc1.dob="";
+                sc1.company="";
+                sc1.sal="";
+            }
+        }
+    }]);
+</script>
+<body>
+
+<div ng-app="App1">
+    <div ng-controller="Ctrl1">
+        <div>
+            <label>Employee Search</label>
+            <input ng-model="employeeSearchId">
+            <button ng-click="doSearch()" class="btn btn-primary">Search</button>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Employee Details</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-2">Employee Name</div>
+                    <div class="col-sm-2">{{employeeName}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">DOB</div>
+                    <div class="col-sm-2">{{dob}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">Company</div>
+                    <div class="col-sm-2">{{company}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">Salary</div>
+                    <div class="col-sm-2">{{sal}}<span  ng-if="sal > 7000" class="glyphicon glyphicon-warning-sign"></span></div>
+                    <!-- <span ng-show="sal > 7000" class="glyphicons glyphicons-coins"></span></div>-->
+                    <!-- <span ng-hide="sal < 7000 || sal == undefined " class="glyphicons glyphicons-coins"></span></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

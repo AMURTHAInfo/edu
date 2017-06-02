@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        var app = angular.module('App1', []);
+        app.controller('Ctrl1', ["$scope",function(scope) {
+            scope.firstName = "John";
+            scope.lastName = "Doe";
+            scope.sal = 25000;
+            scope.getAnnualSal=function(){
+                return scope.sal*12;
+            }
+        }]);
+    </script>
+</head>
+<body>
+<div ng-app="App1">
+    <div ng-controller="Ctrl1">
+        Hello {{firstName+" "+lastName}} you are earning {{sal}} as a salary and
+        your annual salary is {{getAnnualSal()}}
+    </div>
+</div>
+</body>
+</html>

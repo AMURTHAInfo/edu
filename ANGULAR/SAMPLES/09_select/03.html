@@ -1,0 +1,36 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.cars2 = {
+            car01 : "Ford",
+            car02 : "Fiat",
+            car03 : "Volvo"
+        };
+        $scope.cars3 = {
+            car01 : {brand : "Ford", model : "Mustang", color : "red"},
+            car02 : {brand : "Fiat", model : "500", color : "white"},
+            car03 : {brand : "Volvo", model : "XC90", color : "black"}
+        };
+    });
+</script>
+
+
+<body>
+
+<div ng-app="App1" ng-controller="Ctrl1">
+
+    <p><b>5. Select Boxes for Key value pair (string):</b></p>
+    <select ng-model="selectedCarKeyVal" ng-options="x for (x, y) in cars2"></select>
+    <p>You selected: {{selectedCarKeyVal}}</p>
+
+    <p><b>5. Select Boxes for Key value pair (object):</b></p>
+    <select ng-model="selectedCarKeyValObj" ng-options="x for (x, y) in cars3"></select>
+    <p>You selected: {{selectedCarKeyValObj.brand}}</p>
+    <p>Model: {{selectedCarKeyValObj.model}}</p>
+    <p>Color: {{selectedCarKeyValObj.color}}</p>
+</div>
+
+</body>
+</html>

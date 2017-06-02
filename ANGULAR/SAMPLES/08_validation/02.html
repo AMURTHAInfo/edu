@@ -1,0 +1,39 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+    input.ng-invalid {
+        background-color:pink;
+    }
+    input.ng-valid {
+        background-color:lightgreen;
+    }
+</style>
+<body>
+<div ng-app="App1">
+    <form name="Form1">
+        <p><b>3.Custom Validation:</b></p>
+        <p><input name="Input3" ng-model="Input3" required custom-directive1><h1>{{Form1.Input3.$valid}}</h1></p>
+    </form>
+</div>
+<script>
+    var app = angular.module('App1', []);
+    app.directive('customDirective1', function() {
+        return {
+            require: 'ngModel',
+            link: function(scope, element, attr, mCtrl) {
+                //custom validation logic goes here
+                function ValidationFxn(value) {
+                    if (value.indexOf("e") > -1) {
+                        mCtrl.$setValidity('charE', true);
+                    } else {
+                        mCtrl.$setValidity('charE', false);
+                    }
+                    return value;
+                }
+                mCtrl.$parsers.push(ValidationFxn);
+            }
+        };
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+	<header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+		var app =angular.module('myApp', []);
+		app.controller('ctrl', function($scope) {
+			$scope.o={	x : 1,
+						y : 7,
+						z : 5};
+			
+			
+			//$scope.$watch("o",function(newValue,oldValue){
+			//	if(newValue != oldValue){
+			//		console.log("o get modified to="+newValue);
+			//	}
+			//})
+			$scope.$watch("o",function(newValue,oldValue) {
+                if (newValue != oldValue) {
+                    console.log("o get modified to=" + newValue);
+                }
+            },true)
+
+			//$scope.$watchGroup(["o.x","o.y"],function(newValue,oldValue){
+			//	if(newValue != oldValue){
+			//		$scope.z=$scope.x * $scope.y;
+			//		console.log("o get modified to="+newValue);
+			//	}
+			//})
+			
+
+		});
+		</script>
+	</header>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="ctrl">
+				x= <input type="text" ng-model="o.x">
+				y= <input type="text" ng-model="o.y">
+				<div>z={{o.z}}</div>
+			</div>
+		</div>
+
+	</body>
+</html>

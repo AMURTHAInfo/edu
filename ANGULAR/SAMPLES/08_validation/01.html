@@ -1,0 +1,49 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+    input.ng-invalid {
+        background-color:pink;
+    }
+    input.ng-valid {
+        background-color:lightgreen;
+    }
+</style>
+<body>
+<div ng-app="App1">
+    <form name="Form1">
+        <p><b>1. required:</b></p>
+        <input name="Input1" ng-model="Input1" required>
+        <p>The input's valid state is:</p>
+        <h4>{{Form1.Input1.$valid}}</h4>
+
+        <p><b>2. email:</b></p>
+        <input type="email" name="Input2" ng-model="Input2" required>
+        <p>The input's valid state is:</p>
+        <h4>{{Form1.Input2.$valid}}</h4>
+
+        <p><b>3.Input State :</b></p>
+        <p>Name: <input name="Name1" ng-model="Name1" required>
+            <span ng-show="Form1.Name1.$touched">The name field is touched .</span>
+            <span ng-show="Form1.Name1.$untouched">The name field is untouched.</span>
+            <span ng-show="Form1.Name1.$pristine">The name field is pristine(not modified).</span>
+            <span ng-show="Form1.Name1.$dirty">The name is field dirty (modified).</span>
+            <span ng-show="Form1.Name1.$invalid">The name field is invalid.</span>
+            <span ng-show="Form1.Name1.$valid">The name field is valid.</span>
+        </p>
+
+        <p>number: <input type="number" name="Name2" ng-model="Name2" required>
+            <span ng-show="Form1.Name2.$touched">The number field is touched .</span>
+            <span ng-show="Form1.Name2.$untouched">The number field is untouched.</span>
+            <span ng-show="Form1.Name2.$pristine">The number field is pristine(not modified).</span>
+            <span ng-show="Form1.Name2.$dirty">The number field is dirty(modified).</span>
+            <span ng-show="Form1.Name2.$invalid">The number field is invalid.</span>
+            <span ng-show="Form1.Name2.$valid">The number field is valid.</span>
+        </p>
+
+    </form>
+</div>
+<script>
+    var app = angular.module('App1', []);
+</script>
+</body>
+</html>

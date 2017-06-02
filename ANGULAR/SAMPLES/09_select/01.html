@@ -1,0 +1,27 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.names = ["Emil", "Tobias", "Linus"];
+    });
+</script>
+
+<body>
+
+<div ng-app="App1" ng-controller="Ctrl1">
+    <p><b>1. Select Boxes ng-options(String):</b></p>
+    <select ng-model="selectedngoptName" ng-options="x for x in names">
+    </select>
+
+    <p><b>2. Select Boxes ng-repeat(String):</b></p>
+    <select ng-model="selectedngreptName">
+        <option ng-repeat="x in names">{{x}}</option>
+    </select>
+    <p>You selected value from select1: {{selectedngoptName}}</p>
+    <p>You selected value from select2: {{selectedngreptName}}</p>
+    <hr>
+</div>
+
+</body>
+</html>

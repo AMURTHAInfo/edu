@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app', []);
+
+        app.controller('msg', ['$scope', function($scope){
+            $scope.a = 5; //this is available to directive, by default
+        }]);
+
+        app.directive('message', function($interpolate){
+            return{
+                compile: function(tElement, tAttributes){
+                    console.log(tAttributes.text + " -In compile..");
+                    tElement.css("border","1px solid black");
+                    tElement.css("margin-bottom","5px");
+                    return {
+                        pre: function(scope, iElement, iAttributes, controller){
+                            console.log(iAttributes.text + " -In pre..");
+                        },
+                        post: function(scope, iElement, iAttributes, controller){
+                            console.log(iAttributes.text + " -In Post..");
+                        }
+
+                    }
+                },
+                controller: function($scope, $element, $attrs){
+                    console.log($attrs.text +" -In controller..");
+                    //var v=$interpolate($attrs.text)($scope)
+                    //console.log($attrs.text +"--"+v+ " -In controller..");
+                },
+
+            }
+        });
+
+    </script>
+</head>
+<body ng-app="app">
+<div ng-controller="msg">
+    <div message text="{{i}}" ng-repeat="i in [1,2,3,4,5]">
+        {{i}}
+    </div>
+</div>
+</body>
+</html>

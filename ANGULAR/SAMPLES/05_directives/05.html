@@ -1,0 +1,58 @@
+<html>
+<script  src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="  crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="App1">
+    <script type="text/ng-template" id="customTemplate">
+        <div class="panel panel-primary">
+            <div ng-class="(emp.sal >7000) ? 'panel panel-default':'panel panel-primary'">
+                <div class="panel-heading">{{emp.employeeName}}--Details</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">Employee Name</div>
+                        <div class="col-sm-7">{{emp.employeeName}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">DOB</div>
+                        <div class="col-sm-7">{{emp.dob}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">Company</div>
+                        <div class="col-sm-7">{{emp.company}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">Salary</div>
+                        <div class="col-sm-7">{{emp.sal}}<span ng-if="emp.sal >7000" class="glyphicon glyphicon-warning-sign"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+    <div ng-controller="ctrl1">
+        <div class="col-md-4" ng-repeat="emp in employees">
+            <div custom-directive-use1></div>
+        </div>
+    </div>
+</div>
+<script>
+    var app = angular.module("App1", []);
+    app.directive("customDirectiveUse1", function() {
+        return {
+            templateUrl : "customTemplate"
+        };
+    });
+    app.controller("ctrl1",["$scope",function(scope){
+        scope.employees=[   {"employeeName":"Jhon","dob":"09-09-1998","company":"Evry","sal":9000},
+                            {"employeeName":"Peter","dob":"19-04-1996","company":"Evry","sal":6000},
+                            {"employeeName":"Kate","dob":"29-06-1990","company":"Evry","sal":8000},
+                            {"employeeName":"Kari","dob":"12-06-1980","company":"Evry","sal":5000},
+                            {"employeeName":"Edward","dob":"29-07-1890","company":"Evry","sal":8000},
+                            {"employeeName":"Jurry","dob":"23-06-1990","company":"Evry","sal":4000}];
+    }]);
+</script>
+</body>
+</html>

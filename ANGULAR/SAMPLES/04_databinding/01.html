@@ -1,0 +1,38 @@
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        angular.module('app', []);
+
+        angular.module('app').controller("Controller1", ["$scope",function(scope){
+            scope.a=10;
+            scope.b=20;
+            scope.doubleAndSum=function(){
+                scope.a=scope.a *2;
+                scope.b=scope.b *2;
+                scope.sum=parseInt(scope.a) + parseInt(scope.b);
+            };
+        }]);
+    </script>
+
+</head>
+<body ng-app="app">
+    <div ng-controller="Controller1">
+        the value of a is {{a}}<br>
+        the value of b is {{b}}<br>
+        sum is {{sum}}<br>
+        <hr>
+        the value of a is <span ng-bind="a"></span><br>
+        the value of b is  <span ng-bind="b"></span><br>
+        sum is  <span ng-bind="sum"></span><br>
+        <hr>
+        <button ng-click="doubleAndSum()">Calucalate</button><br>
+        <hr>
+        initial value of a is {{::a}}<br>
+        initial value of b is {{::b}}
+    </div>
+</body>
+</html>

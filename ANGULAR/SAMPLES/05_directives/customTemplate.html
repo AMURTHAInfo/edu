@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+<div ng-class="(emp.sal >7000) ? 'panel panel-default':'panel panel-primary'">
+    <div class="panel-heading">{{emp.employeeName}}--Details</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-4">Employee Name</div>
+            <div class="col-sm-7">{{emp.employeeName}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">DOB</div>
+            <div class="col-sm-7">{{emp.dob}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">Company</div>
+            <div class="col-sm-7">{{emp.company}}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">Salary</div>
+            <div class="col-sm-7">{{emp.sal}}<span ng-if="emp.sal >7000" class="glyphicon glyphicon-warning-sign"></span></div>
+        </div>
+    </div>
+</div>
+</div>

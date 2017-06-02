@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/
+libs/angularjs/1.4.8/angular.min.js"></script>
+<script>
+	var app =angular.module('myApp', []);
+	app.controller('ctrl', function($scope,$rootScope) {
+		$scope.x = 1;
+		$scope.y = 2;
+		$scope.z = 3;
+		$scope.$watch("x",function(newValue,oldValue){
+		if(newValue != oldValue){
+			console.log("x get modified to="+newValue);
+		}
+		})
+		$scope.$watch("y",function(newValue,oldValue){
+			if(newValue != oldValue){
+				console.log("y get modified to="+newValue);
+			}
+		})
+
+		$scope.$watch("z",function(newValue,oldValue){
+			if(newValue != oldValue){
+				if($scope.z > 50){
+					$scope.x=1000;
+				}
+				console.log("z get modified to="+newValue);
+			}
+		})
+		$rootScope.$watch(function(newValue,oldValue){
+				console.log("--- digest iteration started ---");
+		})
+
+		});
+	
+
+</script>
+<body>
+
+	<div ng-app="myApp">
+		<div ng-controller="ctrl">
+			x= <input type="text" ng-model="x">
+				<div>x={{x}}</div>
+			y= <input type="text" ng-model="y">
+				<div>x={{y}}</div>
+			z= <input type="text" ng-model="z">
+				<div>x={{z}}</div>
+		</div>
+	</div>
+
+</body>
+</html>

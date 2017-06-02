@@ -1,0 +1,40 @@
+<html>
+	<header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+		var app =angular.module('myApp', []);
+		app.controller('ctrl', function($scope) {
+			$scope.emps=[{empno : 1001,empName:"jog"},{empno : 1002,empName:"henry"},{empno : 1003,empName:"mery"}];
+			$scope.addEmp=function(newValue,oldValue){
+				var newempno=1000+$scope.emps.length+1;
+				var newempName="empName_"+newempno;
+				$scope.emps.push({empno : newempno,empName:newempName});
+			}	
+			$scope.modifyEmp=function(){
+				$scope.emps[3].empName="henry";
+			}
+
+			$scope.$watch("emps",function(newValue,oldValue){
+					console.log("No of employees="+$scope.emps.length);
+			});
+			$scope.$watchCollection("emps",function(newValue,oldValue){
+					console.log("in $watchCollection No of employees="+$scope.emps.length);
+			});
+			$scope.$watchCollection("emps",function(newValue,oldValue){
+					console.log("in $watchCollection with true No of employees="+$scope.emps.length);
+			},true);
+		});
+		</script>
+	</header>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="ctrl">
+				
+				<div ng-repeat="o in emps">{{o.empno}}---{{o.empName}}</div>
+				<button ng-click="addEmp()">add employee</button>
+				<button ng-click="modifyEmp()">Modify 3rd employee</button>
+			</div>
+		</div>
+
+	</body>
+</html>

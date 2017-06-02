@@ -1,0 +1,52 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="App1" ng-controller="Ctrl1">
+    <p><b>1.ng-mousemove:</b></p>
+    <p><h3 ng-mousemove="count1 = count1 + 1" >Mouse Over =={{ count1 }}</h3></p>
+
+    <p><b>1.ng-click refer to expression:</b></p>
+    <p><button ng-click="count2 = count2 + 1"> Button Click!</button>{{ count2 }}</p>
+
+    <p><b>1.ng-click refer to function:</b></p>
+    <p><button ng-click="function1()">Click Here!</button>{{ count3 }}</p>
+
+    <p><b>1.ng-click refer to function (show or hide):</b></p>
+    <button ng-click="function2()">Click Here!</button>
+    <div ng-show="showOrHide">
+        <h4>Menu:</h4>
+        <div>Pizza</div>
+        <div>Pasta</div>
+        <div>Pesce</div>
+    </div>
+    <br>
+    <button id="fxn3" ng-click="function3($event)">Click Here!</button>
+</div>
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.count1 = 0;
+        $scope.count3 = 0;
+        $scope.function1 = function() {
+            $scope.count3++;
+        };
+        $scope.showOrHide = false;
+        $scope.function2 = function() {
+            $scope.showOrHide = !$scope.showOrHide;
+        }
+        $scope.function3 = function(eventObject) {
+            console.log(eventObject);
+            //$scope.value = myE.clientX;
+            var elem1 = angular.element(eventObject.srcElement);
+            var elem2 = eventObject.target
+            $elem3=elem2;
+            console.log(elem1);
+            console.log($elem3.attr("id"));
+        }
+    });
+</script>
+
+</body>
+</html>

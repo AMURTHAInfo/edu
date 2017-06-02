@@ -1,0 +1,23 @@
+<html>
+	<header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+		var app =angular.module('myApp', []);
+		app.controller('ctrl', function($scope) {
+			$scope.x = 1;
+			$scope.y = 7;
+			$scope.z = 5;
+		});
+		</script>
+	</header>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="ctrl">
+				x= <input type="text" ng-model="x">
+				<div>x={{x}}</div>
+				<div>y={{y}}</div>
+			</div>
+		</div>
+
+	</body>
+</html>

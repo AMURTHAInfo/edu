@@ -1,0 +1,64 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+<h3>Angula JS Filters</h3>
+
+<div ng-app="App1" ng-controller="Ctrl1"><!-- ng-controller="Ctrl1" -->
+
+    <!-- Adding Filters to Directives -->
+    <p><b> OrderBy filter :</b></p>
+    <ul>
+        <li ng-repeat="x in names1 | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+    <p><b>Filter an Array Based on User Input:</b></p>
+    <p>Type a letter in the input field:</p>
+    <p><input type="text" ng-model="test"></p>
+    <ul>
+        <li ng-repeat="x in hesaru | filter:test">
+            {{ x }}
+        </li>
+    </ul>
+
+    <p><b>Sort an Array Based on User Input:</b></p>
+    <p>Click the table headers to change the sorting order:</p>
+
+    <table border="1" width="100%">
+        <tr>
+            <th ng-click="orderByMe('name')">Name</th>
+            <th ng-click="orderByMe('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names1 | orderBy:myOrderBy">
+            <td>{{x.name}}</td>
+            <td>{{x.country}}</td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.names1 = [
+            {name:'Jani',country:'Norway'},
+            {name:'Carl',country:'Sweden'},
+            {name:'Margareth',country:'England'},
+            {name:'Hege',country:'Norway'},
+            {name:'Joe',country:'Denmark'},
+            {name:'Gustav',country:'Sweden'},
+            {name:'Birgit',country:'Denmark'},
+            {name:'Mary',country:'England'},
+            {name:'Kai',country:'Norway'}
+        ];
+        $scope.hesaru = [ 'Jani', 'Carl', 'Margareth',  'Hege', 'Joe', 'Gustav'];
+
+        $scope.orderByMe = function(x) {
+            $scope.myOrderBy = x;
+        }
+    });
+</script>
+
+</body>
+</html>

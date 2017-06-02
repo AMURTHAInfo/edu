@@ -1,0 +1,52 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<!-- ng-app directive defines an AngularJS application. -->
+<div ng-app="App1" ng-controller="ctrl1">
+
+    <p><h1> Custom Directive Use:</h1></p>
+
+    <h3><u>Default Restriction:</u></h3>
+    <p><mark>Element Name: </mark></p><custom-directive-use1></custom-directive-use1>
+    <hr>
+    <p><mark>Class Name: </mark></p><div class="custom-directive-use1"></div>
+    <hr>
+    <p><mark>Attribute: </mark></p><div custom-directive-use1></div>
+    <hr>
+    <p><mark>Comment: </mark></p>
+    <!-- directive: custom-directive-use1 -->
+
+    <h3><u>Custom Restriction:</u></h3>
+    <p><mark>Element Name: </mark></p><custom-directive-use2></custom-directive-use2>
+    <hr>
+    <p><mark>Class Name: </mark></p><div class="custom-directive-use2"></div>
+    <hr>
+    <p><mark>Attribute: </mark></p><div custom-directive-use2></div>
+    <hr>
+    <p><mark>Comment: </mark></p>
+    <!-- directive: custom-directive-use2 -->
+
+</div>
+<script>
+    var app = angular.module("App1", []);
+    app.directive("customDirectiveUse1", function() {
+        return {
+            template : "<h4> customized directive added to application!<h4>"
+        };
+    });
+    app.directive("customDirectiveUse2", function() {
+        return {
+            restrict : "M",
+            replace : true,
+            template : "<h1>customized directive added to application!</h1>"
+        };
+    });
+    /*  E for Element name
+     A for Attribute
+     C for Class
+     M for Comment */
+
+</script>
+</body>
+</html>

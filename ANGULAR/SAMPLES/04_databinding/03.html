@@ -1,0 +1,43 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module("App1", []);
+    app.directive("customDirectiveUse1", function() {
+        return {
+            template : "<h4>1. customized directive added to application!<h4>"
+        };
+    });
+    app.directive("customDirectiveUse2", function() {
+        return {
+            restrict : "M",
+            template : "2. customized directive added to application!"
+        };
+    });
+    /*  E for Element name
+     A for Attribute
+     C for Class
+     M for Comment */
+
+</script>
+<body>
+
+<!-- ng-app directive defines an AngularJS application. -->
+<h3>Angula JS Custom Directives Usages</h3>
+<div ng-app="App1">
+
+    <b>Default Restriction:</b>
+    <p><mark>Element Name: </mark></p><custom-directive-use1></custom-directive-use1>
+    <p><mark>Class Name: </mark></p><div class="custom-directive-use1"></div>
+    <p><mark>Attribute: </mark></p><div custom-directive-use1></div>
+    <p><mark>Comment: </mark></p>
+    <!-- directive: custom-directive-use1 -->
+
+    <b>Custom Restriction:</b>
+    <p><mark>Element Name: </mark></p><custom-directive-use2></custom-directive-use2>
+    <p><mark>Class Name: </mark></p><div class="custom-directive-use2"></div>
+    <p><mark>Attribute: </mark></p><div custom-directive-use2></div>
+    <p><mark>Comment: </mark></p><!-- directive: custom-directive-use2 -->
+
+</div>
+</body>
+</html>

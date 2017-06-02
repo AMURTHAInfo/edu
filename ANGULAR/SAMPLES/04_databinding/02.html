@@ -1,0 +1,32 @@
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        angular.module('app', []);
+
+        angular.module('app').controller("Controller1", ["$scope",function(scope){
+            scope.a=10;
+            scope.b=20;
+            scope.doubleAndSum=function(){
+                scope.a=scope.a *2;
+                scope.b=scope.b *2;
+                scope.sum=parseInt(scope.a) + parseInt(scope.b);
+            };
+        }]);
+    </script>
+
+</head>
+<body ng-app="app">
+<div ng-controller="Controller1">
+    the value of a is {{a}} you can change the value to <input type="text" ng-model="a"><br>
+    the value of b is {{b}} you can change the value to <input type="text" ng-model="b"><br>
+    sum is {{sum}}<br>
+    <button ng-click="doubleAndSum()">Calucalate</button><br>
+    initial value of a is {{::a}}<br>
+    initial value of b is {{::b}}
+</div>
+</body>
+</html>

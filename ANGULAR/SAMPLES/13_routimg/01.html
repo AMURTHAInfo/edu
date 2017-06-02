@@ -1,0 +1,31 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<script>
+    var app = angular.module("App2", ["ngRoute"]);
+    app.config(function($routeProvider) {
+        $routeProvider
+            .when("/", {
+                template : "<h1>Main</h1><img src='main.jpg' style='height:30px'></img>"
+            })
+            .when("/span", {
+                template : "<h1>Span</h1><img src='span.jpg'></img>"
+            })
+            .when("/evry", {
+                template : "<h1>Evry</h1><img src='evry.png' style='height:30px'></img>"
+            });
+    });
+</script>
+<body ng-app="App2">
+<p>Click on the links to change the content.</p>
+<p><a href="#/">Main</a></p>
+
+<a href="#span">Span</a>
+<a href="#evry">Evry</a>
+
+<div ng-view></div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+	<header>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script>
+		var app =angular.module('myApp', []);
+		app.controller('ctrl', function($scope) {
+			$scope.x = 1;
+			$scope.y = 7;
+			$scope.z = 5;
+			
+			$scope.$watchGroup(["x","y"],function(newValue,oldValue){
+				if(newValue != oldValue){
+					$scope.z=$scope.x * $scope.y;
+					console.log("x get modified to="+newValue);
+				}
+			})
+			
+			$scope.$watch("z",function(newValue,oldValue){
+				if(newValue != oldValue){
+					console.log("z get modified to="+newValue);
+				}
+			})
+		});
+		</script>
+	</header>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="ctrl">
+				x= <input type="text" ng-model="x">
+				y= <input type="text" ng-model="y">
+				<div>z={{z}}</div>
+			</div>
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+    var app = angular.module('App1', []);
+    app.controller('Ctrl1', function($scope) {
+        $scope.lastName = "Jhon Doe";
+        $scope.price = 58;
+    });
+</script>
+<body>
+<h3>Angula JS Filters</h3>
+
+<div ng-app="App1" ng-controller="Ctrl1"><!-- ng-controller="Ctrl1" -->
+
+    <!-- Adding Filters to Expressions -->
+    <p>The name is {{ lastName }}</p>
+    <p><b>1. uppercase :</b></p>
+    <p>The name is {{ lastName | uppercase }}</p>
+
+    <p><b>2. lowercase :</b></p>
+    <p>The name is {{ lastName | lowercase }}</p>
+
+    <!-- custom currency : {{ number | currency : symbol : fractionsize }} -->
+    <p><b>3. default currency :</b></p>
+    <p>Price: {{ price | currency }}</p>
+    <p><b>4. custom currency :</b></p>
+    <p>Price = {{ price | currency : "USD" : 3}}</p>
+
+</div>
+
+</body>
+</html>
