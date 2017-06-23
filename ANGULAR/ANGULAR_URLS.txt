@@ -1,0 +1,13 @@
+https://docs.angularjs.org/api -- for angular api related documnets
+
+http://revillweb.github.io/angularjs-by-example/#/ -- for project structure and conventions
+
+https://www.sitepoint.com/10-reasons-use-angularjs/
+
+https://rubygarage.org/blog/how-to-choose-between-angular-and-react
+
+https://magenic.com/thinking/angular-2-vs-angularjs-1-which-to-choose
+
+http://www.effectiveui.com/blog/2015/08/03/angular-vs-react-choosing-the-right-framework/
+
+https://medium.com/@nmamikonyan/when-choose-react-or-angular-2-d4006cd6617c
