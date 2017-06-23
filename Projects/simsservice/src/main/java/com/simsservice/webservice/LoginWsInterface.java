@@ -31,8 +31,8 @@ import com.simsservice.entity.Employee;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
-@Path(value = "/loginWs")
-@Api(value = "/loginWs", description = "User account related operations")
+@Path(value = "/employeeWs")
+@Api(value = "/employeeWs", description = "User account related operations")
 public interface LoginWsInterface {
 
 	/**
