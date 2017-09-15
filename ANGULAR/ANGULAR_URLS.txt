@@ -1,3 +1,5 @@
+https://github.com/johnpapa/angular-styleguide -- Angular Style guide
+
 https://docs.angularjs.org/api -- for angular api related documnets
 
 http://revillweb.github.io/angularjs-by-example/#/ -- for project structure and conventions
