@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    html, body ,.sidenav,.text-left {height: 100%;}
+    .row.content {height: 100%}
+    footer{
+        padding: 0px !important;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+	display: block;
+}
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+a:active, a:hover {
+	outline: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol{ 
+    margin:0px; padding:0px;
+}
+
+
+/***********************  TOP Bar ********************/
+.sidebar {
+    background: #337ab7;
+    display: inline-block;
+    white-space: nowrap;
+    transition: width 1s ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 0%;
+    font-size: 15px;
+    width:15%;  
+    background-color:#337ab7;
+    transition: all 0.5s  ease-in-out; 
+}
+
+.bg-defoult{
+    background-color:#337ab7;
+}
+.sidebar ul{ 
+    list-style:none; margin:0px; 
+    padding:0px; 
+}
+.sidebar li a,.sidebar li a.collapsed.active{ 
+    display:block; 
+    padding:8px 12px; 
+    color:#fff;  
+    text-decoration:none
+}
+.sidebar li a.active{
+    background-color:#337ab7; 
+    transition: all 0.5s  ease-in-out
+}
+.sidebar li a:hover{
+    background-color:#337ab7 !important;
+}
+.sidebar li a i{ 
+    padding-right:6%;
+}
+.sidebar li a .nofaicon{ 
+    padding-right:12%;
+}
+.sidebar ul li .sub-menu li a{ 
+    position:relative;
+}
+.sidebar ul li .sub-menu li a:before{
+    font-family: FontAwesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.sidebar ul li .sub-menu li a:hover:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    background-color: #337ab7;
+    height: 100%;
+}
+.sidebar ul li .sub-menu li a:hover{ 
+    background-color:#337ab7; 
+    padding-left:20px; 
+    transition: all 0.5s  ease-in-out;
+}
+
+.sidebar li a .nav-label,.sidebar li a .nav-label+span{ 
+    transition: all 0.5s  ease-in-out;
+}
+	
+.sidebar.fliph li a .nav-label,.sidebar.fliph li a .nav-label+span{
+    display:none;
+    transition: all 0.5s  ease-in-out;
+}
+.sidebar.fliph {
+    width: 6%;
+    transition: all 0.5s  ease-in-out;
+}
+	
+.sidebar.fliph li{ 
+    position:relative
+}
+.sidebar.fliph .sub-menu {
+    position: absolute;
+    left: 39px;
+    top: 0;
+    background-color: #337ab7;
+    width: 150px;
+    z-index: 100;
+}
+.list-sidebar li{
+  text-align: left;
+}
+.nav-label{
+  padding-left: 1%;
+}
+</style>
+
+<script>
+  $(document).ready(function() {
+    function setHeight() {
+      windowHeight = $(window).innerHeight()-82;
+      $('.sidebar').css('min-height', windowHeight);
+      $('.sidebar').css('max-height', windowHeight);
+      $('.text-left').css('min-height', windowHeight);
+    };
+    setHeight();
+    
+    $(window).resize(function() {
+      setHeight();
+    });
+    $('button').click(function(){
+       $('.sidebar').toggleClass('fliph');
+   });
+  
+  });
+</script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    
+      
+      <div class="col-sm-2 sidebar left ">
+        <button> <i class="fa fa fa-th-large" > </i></button>
+        <ul class="list-sidebar bg-defoult">
+          <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="fa fa-chevron-right"></span><span class="nav-label"> Dashboards </span></a>
+            <ul class="sub-menu collapse" id="dashboard">
+              <li class="active"><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">Tabs & Accordions</a></li>
+              <li><a href="#">Typography</a></li>
+              <li><a href="#">FontAwesome</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Panels</a></li>
+              <li><a href="#">Widgets</a></li>
+              <li><a href="#">Bootstrap Model</a></li>
+            </ul>
+          </li>
+          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Layouts</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Graphs</span></a>
+            <ul class="sub-menu collapse" id="products">
+              <li class="active"><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">CSS3 Animation</a></li>
+              <li><a href="#">Tabs & Accordions</a></li>
+              <li><a href="#">Typography</a></li>
+              <li><a href="#">FontAwesome</a></li>
+              <li><a href="#">Slider</a></li>
+              <li><a href="#">Panels</a></li>
+              <li><a href="#">Widgets</a></li>
+              <li><a href="#">Bootstrap Model</a></li>
+            </ul>
+          </li>
+          <li> <a href="#"><i class="fa fa-laptop nofaicon"></i> <span class="nav-label">Grid options</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Tables</span></a>
+            <ul  class="sub-menu collapse" id="tables" >
+              <li><a href=""> Static Tables</a></li>
+              <li><a href=""> Data Tables</a></li>
+              <li><a href=""> Foo Tables</a></li>
+              <li><a href=""> jqGrid</a></li>
+            </ul>
+          </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">E-commerce</span></a>
+            <ul  class="sub-menu collapse" id="e-commerce" >
+              <li><a href=""> Products grid</a></li>
+              <li><a href=""> Products list</a></li>
+              <li><a href="">Product edit</a></li>
+              <li><a href=""> Product detail</a></li>
+              <li><a href="">Cart</a></li>
+              <li><a href=""> Orders</a></li>
+              <li><a href=""> Credit Card form</a> </li>
+            </ul>
+          </li>
+          <li> <a href=""><i class="fa fa-pie-chart nofaicon"></i> <span class="nav-label">Metrics</span> </a></li>
+          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
+          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
+        </ul>
+      </div>
+    
+    <div class="col-sm-10 text-left"> 
+      <h1>Welcome</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <hr>
+      <h3>Test</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
