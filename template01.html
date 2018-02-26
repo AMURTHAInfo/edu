@@ -21,6 +21,10 @@
       height: 100%;
     }
     
+    .navbar-inverse {
+      background-color: #555;
+      border-color: #555;
+    }
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
@@ -85,9 +89,14 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     font-size: 15px;
     width:15%;  
     background-color:#337ab7;
-    transition: all 0.5s  ease-in-out; 
+    
 }
-
+.sub-menu {
+  font-size: 12px;
+}
+.sub-menu li{
+  padding-left: 25%;
+}
 .bg-defoult{
     background-color:#337ab7;
 }
@@ -103,7 +112,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 }
 .sidebar li a.active{
     background-color:#337ab7; 
-    transition: all 0.5s  ease-in-out
+   
 }
 .sidebar li a:hover{
     background-color:#337ab7 !important;
@@ -137,20 +146,17 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 .sidebar ul li .sub-menu li a:hover{ 
     background-color:#337ab7; 
     padding-left:20px; 
-    transition: all 0.5s  ease-in-out;
+    
 }
 
-.sidebar li a .nav-label,.sidebar li a .nav-label+span{ 
-    transition: all 0.5s  ease-in-out;
-}
 	
 .sidebar.fliph li a .nav-label,.sidebar.fliph li a .nav-label+span{
     display:none;
-    transition: all 0.5s  ease-in-out;
+    
 }
 .sidebar.fliph {
-    width: 6%;
-    transition: all 0.5s  ease-in-out;
+    width: 4%;
+    
 }
 	
 .sidebar.fliph li{ 
@@ -170,12 +176,44 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 .nav-label{
   padding-left: 1%;
 }
+.fa-chevron-rightdisp{
+  display: none;
+}
+.contentdivwidth{
+  width: 95%
+}
+
+.panel{
+  margin-top: 1%;
+  width: 100%;
+}
+/* Custom scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
 </style>
 
 <script>
   $(document).ready(function() {
     function setHeight() {
-      windowHeight = $(window).innerHeight()-82;
+      windowHeight = $(window).innerHeight()-70;
       $('.sidebar').css('min-height', windowHeight);
       $('.sidebar').css('max-height', windowHeight);
       $('.text-left').css('min-height', windowHeight);
@@ -187,6 +225,8 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     });
     $('button').click(function(){
        $('.sidebar').toggleClass('fliph');
+       $('.fa-chevron-right').toggleClass('fa-chevron-rightdisp');
+       $('.contentdiv').toggleClass('contentdivwidth');
    });
   
   });
@@ -226,70 +266,39 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
       <div class="col-sm-2 sidebar left ">
         <button> <i class="fa fa fa-th-large" > </i></button>
         <ul class="list-sidebar bg-defoult">
-          <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="fa fa-chevron-right"></span><span class="nav-label"> Dashboards </span></a>
+          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Dashboards</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="fa fa-chevron-right"></span><span class="nav-label"> Customers </span></a>
             <ul class="sub-menu collapse" id="dashboard">
-              <li class="active"><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">Tabs & Accordions</a></li>
-              <li><a href="#">Typography</a></li>
-              <li><a href="#">FontAwesome</a></li>
-              <li><a href="#">Slider</a></li>
-              <li><a href="#">Panels</a></li>
-              <li><a href="#">Widgets</a></li>
-              <li><a href="#">Bootstrap Model</a></li>
+              <li class="active"><a href="#">Customer-Individual</a></li>
             </ul>
           </li>
-          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Layouts</span></a> </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Graphs</span></a>
+          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Audit List</span></a> </li>
+          <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Projects</span></a>
             <ul class="sub-menu collapse" id="products">
-              <li class="active"><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">CSS3 Animation</a></li>
-              <li><a href="#">Tabs & Accordions</a></li>
-              <li><a href="#">Typography</a></li>
-              <li><a href="#">FontAwesome</a></li>
-              <li><a href="#">Slider</a></li>
-              <li><a href="#">Panels</a></li>
-              <li><a href="#">Widgets</a></li>
-              <li><a href="#">Bootstrap Model</a></li>
+              <li class="active"><a href="#">Projects-Active</a></li>
+              <li><a href="#">Projects-InActive</a></li>
             </ul>
           </li>
-          <li> <a href="#"><i class="fa fa-laptop nofaicon"></i> <span class="nav-label">Grid options</span></a> </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Tables</span></a>
+          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
             <ul  class="sub-menu collapse" id="tables" >
-              <li><a href=""> Static Tables</a></li>
-              <li><a href=""> Data Tables</a></li>
-              <li><a href=""> Foo Tables</a></li>
-              <li><a href=""> jqGrid</a></li>
+              <li><a href=""> Issue Tracker</a></li>
+              <li><a href=""> Risk Tracker</a></li>
             </ul>
           </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">E-commerce</span></a>
+          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Approve Lesson Learnt/Risk</span></a>
             <ul  class="sub-menu collapse" id="e-commerce" >
-              <li><a href=""> Products grid</a></li>
-              <li><a href=""> Products list</a></li>
-              <li><a href="">Product edit</a></li>
-              <li><a href=""> Product detail</a></li>
-              <li><a href="">Cart</a></li>
-              <li><a href=""> Orders</a></li>
-              <li><a href=""> Credit Card form</a> </li>
+              <li><a href=""> Approve Lesson Learnt</a></li>
+              <li><a href=""> Approve Risk Taxonomy</a></li>
             </ul>
           </li>
-          <li> <a href=""><i class="fa fa-pie-chart nofaicon"></i> <span class="nav-label">Metrics</span> </a></li>
-          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
-          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
-          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
-          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
-          <li> <a href="#"><i class="fa fa-files-o nofaicon"></i> <span class="nav-label">Other Pages</span></a> </li>
         </ul>
       </div>
     
-    <div class="col-sm-10 text-left"> 
-      <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <hr>
-      <h3>Test</h3>
-      <p>Lorem ipsum...</p>
+    <div class="col-sm-10 contentdiv"> 
+        <div class="panel panel-primary">
+            <div class="panel-heading">Panel with panel-primary class</div>
+            <div class="panel-body">Panel Content</div>
+        </div>
     </div>
   </div>
 </div>
