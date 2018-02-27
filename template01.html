@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Bootstrap Example</title>
@@ -95,7 +95,10 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
   font-size: 12px;
 }
 .sub-menu li{
-  padding-left: 25%;
+  padding-left: 5%;
+}
+.nofaicon {
+    padding-left: 10% !important;
 }
 .bg-defoult{
     background-color:#337ab7;
@@ -120,9 +123,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 .sidebar li a i{ 
     padding-right:6%;
 }
-.sidebar li a .nofaicon{ 
-    padding-right:12%;
-}
+
 .sidebar ul li .sub-menu li a{ 
     position:relative;
 }
@@ -154,10 +155,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     display:none;
     
 }
-.sidebar.fliph {
-    width: 4%;
-    
-}
+
 	
 .sidebar.fliph li{ 
     position:relative
@@ -176,8 +174,24 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 .nav-label{
   padding-left: 1%;
 }
-.fa-chevron-rightdisp{
-  display: none;
+.sidebaricon {
+    display: none;
+}
+/* side bar minimization */
+.sidebar.fliph {
+    margin-left: -12%;
+}
+.sidebarButton{
+    margin-left: 90%;
+}
+.sidebariconpos{
+    margin-left: 85% !important;
+    display: block;
+}
+.sidebarlinksdisp {
+    display: none;
+}.fa-chevron-rightdisp {
+    display: none;
 }
 .contentdivwidth{
   width: 95%
@@ -227,6 +241,9 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
        $('.sidebar').toggleClass('fliph');
        $('.fa-chevron-right').toggleClass('fa-chevron-rightdisp');
        $('.contentdiv').toggleClass('contentdivwidth');
+       $('.sidebar button').toggleClass('sidebarButton');
+       $('.sidebaricon').toggleClass('sidebariconpos');
+       $('.sidebarlinks').toggleClass('sidebarlinksdisp');
    });
   
   });
@@ -264,34 +281,68 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     
       
       <div class="col-sm-2 sidebar left ">
-        <button> <i class="fa fa fa-th-large" > </i></button>
-        <ul class="list-sidebar bg-defoult">
-          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Dashboards</span></a> </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="fa fa-chevron-right"></span><span class="nav-label"> Customers </span></a>
-            <ul class="sub-menu collapse" id="dashboard">
-              <li class="active"><a href="#">Customer-Individual</a></li>
-            </ul>
-          </li>
-          <li> <a href="#"><i class="fa fa-diamond nofaicon"></i> <span class="nav-label">Audit List</span></a> </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Projects</span></a>
-            <ul class="sub-menu collapse" id="products">
-              <li class="active"><a href="#">Projects-Active</a></li>
-              <li><a href="#">Projects-InActive</a></li>
-            </ul>
-          </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
-            <ul  class="sub-menu collapse" id="tables" >
-              <li><a href=""> Issue Tracker</a></li>
-              <li><a href=""> Risk Tracker</a></li>
-            </ul>
-          </li>
-          <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i><span class="fa fa-chevron-right"></span> <span class="nav-label">Approve Lesson Learnt/Risk</span></a>
-            <ul  class="sub-menu collapse" id="e-commerce" >
-              <li><a href=""> Approve Lesson Learnt</a></li>
-              <li><a href=""> Approve Risk Taxonomy</a></li>
-            </ul>
-          </li>
-        </ul>
+          <button> <i class="fa fa fa-th-large"> </i></button>
+          <ul class="list-sidebar bg-defoult sidebaricon">
+              <li> <a href="#"><i class="fa fa-th-large"></i></a> </li>
+              <li> <a href="#"><i class="fa fa-diamond"></i></a> </li>
+              <li> <a href="#"><i class="fa fa-bar-chart-o"></i></a> </li>
+              <li> <a href="#"><i class="fa fa-table"></i></a> </li>
+              <li> <a href="#"><i class="fa fa-shopping-cart"></i></a> </li>
+              <li> <a href="#"><i class="fa fa-th-large"></i></a> </li>
+          </ul>
+
+          <ul class="list-sidebar bg-defoult sidebarlinks">
+              <li> <a href="#"><span class="nav-label nofaicon">Dashboards</span></a> </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active">  <span class="fa fa-chevron-right"></span><span class="nav-label"> Customers </span></a>
+                  <ul class="sub-menu collapse" id="dashboard">
+                      <li class="active"><a href="#">Customer-Individual</a></li>
+                  </ul>
+              </li>
+              <li> <a href="#"> <span class="nav-label nofaicon">Audit List</span></a> </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active"> <span class="fa fa-chevron-right"></span> <span class="nav-label">Projects</span></a>
+                  <ul class="sub-menu collapse" id="products">
+                      <li class="active"><a href="#">Projects-Active</a></li>
+                      <li><a href="#">Projects-InActive</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <ul class="sub-menu collapse" id="tables">
+                      <li><a href=""> Issue Tracker</a></li>
+                      <li><a href=""> Risk Tracker</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">Approve Lesson Learnt/Risk</span></a>
+                  <ul class="sub-menu collapse" id="e-commerce">
+                      <li><a href=""> Approve Lesson Learnt</a></li>
+                      <li><a href=""> Approve Risk Taxonomy</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#tables1" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <ul class="sub-menu collapse" id="tables1">
+                      <li><a href=""> Issue Tracker</a></li>
+                      <li><a href=""> Risk Tracker</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#tables2" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <ul class="sub-menu collapse" id="tables2">
+                      <li><a href=""> Issue Tracker</a></li>
+                      <li><a href=""> Risk Tracker</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a href="#" data-toggle="collapse" data-target="#tables3" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <ul class="sub-menu collapse" id="tables3">
+                      <li><a href=""> Issue Tracker</a></li>
+                      <li><a href=""> Risk Tracker</a></li>
+                  </ul>
+              </li>
+          </ul>
       </div>
     
     <div class="col-sm-10 contentdiv"> 
