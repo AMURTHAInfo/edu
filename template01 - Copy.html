@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+         body {
+            background: url(background.jpg) no-repeat fixed;
+            background-size: cover;
+            position: relative;
+        } 
+
+        /* Remove the navbar's default margin-bottom and rounded borders */
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        .navbar-inverse {
+            background-color:transparent !important;
+            border-bottom-color:#e3e7ea !important;
+            border-top-color:transparent !important;
+            border-left-color:transparent !important;
+            border-right-color:transparent !important;
+        }
+        .navbar-right>li>a{
+            color: white !important; 
+            font-size: 16px !important;
+        }
+        /* Set black background color, white text and some padding */
+
+        footer {
+            background-color:transparent !important;
+            border-color:#e3e7ea !important;
+            padding: 0px !important;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            padding: 15px;
+            height: 20px !important;
+        }
+        .panel-primary {
+            margin-top: 0.25%;
+            background-color:transparent !important;
+            border-bottom-color:#e3e7ea !important;
+            border-top-color:transparent !important;
+            border-left-color:transparent !important;
+            border-right-color:transparent !important;
+        }
+        .panel-primary>.panel-heading {
+            color: #ffffff;
+            background-color: transparent;
+            border-color: transparent !important;
+        }
+        .contentcol{
+            padding-right: 0px !important; 
+            padding-left: 0px !important;
+        }
+        
+        .panel-heading{
+            height: 35px !important;
+            padding-right: 5% !important;
+            padding-left: 1% !important;
+        }
+        .menulabel{
+            float: left;
+            
+        }
+        .actionitems{
+            text-align: right;
+            
+        }
+        .actionitems>a>.fa{
+            font-size: 20px !important;
+            margin-right: 1% !important;
+            color:#020d17
+        }
+        /* Custom scroll bar */
+
+        /* width */
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            function setHeight() {
+                windowHeight = $(window).innerHeight() - 113;
+                $('.contentbody').css('min-height', windowHeight);
+            };
+            setHeight();
+            $(window).resize(function () {
+                setHeight();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="#">Logo</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="activenavlinks" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="activenavlinks" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="activenavlinks" href="#">Projects</a>
+                    </li>
+                    <li>
+                        <a class="activenavlinks" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 contentcol">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="menulabel">Panel with panel-primary class</div>
+                        <div class="actionitems">
+                            <a href="#"><i class="fa fa-th-large"></i></a> 
+                            <a href="#"><i class="fa fa-diamond"></i></a>
+                            <a href="#"><i class="fa fa-bar-chart-o"></i></a> 
+                            <a href="#"><i class="fa fa-table"></i></a> 
+                            <a href="#"><i class="fa fa-shopping-cart"></i></a> 
+
+                        </div>
+                    </div>
+                    <div class="panel-body contentbody">Panel Content</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p>Footer Text</p>
+    </footer>
+
+</body>
+
+</html>
