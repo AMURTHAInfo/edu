@@ -13,6 +13,7 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      
     }
     
     /* Set gray background color and 100% height */
@@ -25,6 +26,8 @@
       background-color: #555;
       border-color: #555;
     }
+
+
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
@@ -52,9 +55,6 @@
 
     
 
-article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
-	display: block;
-}
 audio, canvas, progress, video {
 	display: inline-block;
 	vertical-align: baseline;
@@ -72,9 +72,7 @@ a:active, a:hover {
 	outline: 0;
 }
 
-h1,h2,h3,h4,h5,h6,p,ul,ol{ 
-    margin:0px; padding:0px;
-}
+
 
 
 /***********************  TOP Bar ********************/
@@ -177,6 +175,11 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 .sidebaricon {
     display: none;
 }
+/* content panel */
+.panel{
+  margin-top: 1%;
+  width: 100%;
+}
 /* side bar minimization */
 .sidebar.fliph {
     margin-left: -12%;
@@ -197,10 +200,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
   width: 95%
 }
 
-.panel{
-  margin-top: 1%;
-  width: 100%;
-}
+
 /* Custom scroll bar */
 
 /* width */
@@ -237,7 +237,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     $(window).resize(function() {
       setHeight();
     });
-    $('button').click(function(){
+    $('#sidebartogglebtn').click(function(){
        $('.sidebar').toggleClass('fliph');
        $('.fa-chevron-right').toggleClass('fa-chevron-rightdisp');
        $('.contentdiv').toggleClass('contentdivwidth');
@@ -264,10 +264,10 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a class="activenavlinks" href="#">Home</a></li>
+        <li><a class="activenavlinks" href="#">About</a></li>
+        <li><a class="activenavlinks" href="#">Projects</a></li>
+        <li><a class="activenavlinks" href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -281,7 +281,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
     
       
       <div class="col-sm-2 sidebar left ">
-          <button> <i class="fa fa fa-th-large"> </i></button>
+          <button id="sidebartogglebtn"> <i class="fa fa fa-th-large"> </i></button>
           <ul class="list-sidebar bg-defoult sidebaricon">
               <li> <a href="#"><i class="fa fa-th-large"></i></a> </li>
               <li> <a href="#"><i class="fa fa-diamond"></i></a> </li>
@@ -294,49 +294,49 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
           <ul class="list-sidebar bg-defoult sidebarlinks">
               <li> <a href="#"><span class="nav-label nofaicon">Dashboards</span></a> </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active">  <span class="fa fa-chevron-right"></span><span class="nav-label"> Customers </span></a>
+                  <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active">  <i class="fa fa-angle-down rotate-icon"></i><span class="nav-label"> Customers </span></a>
                   <ul class="sub-menu collapse" id="dashboard">
                       <li class="active"><a href="#">Customer-Individual</a></li>
                   </ul>
               </li>
               <li> <a href="#"> <span class="nav-label nofaicon">Audit List</span></a> </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active"> <span class="fa fa-chevron-right"></span> <span class="nav-label">Projects</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active"> <span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">Projects</span></a>
                   <ul class="sub-menu collapse" id="products">
                       <li class="active"><a href="#">Projects-Active</a></li>
                       <li><a href="#">Projects-InActive</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active"><span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">SE Process Group</span></a>
                   <ul class="sub-menu collapse" id="tables">
                       <li><a href=""> Issue Tracker</a></li>
                       <li><a href=""> Risk Tracker</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">Approve Lesson Learnt/Risk</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active"><span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">Approve Lesson Learnt/Risk</span></a>
                   <ul class="sub-menu collapse" id="e-commerce">
                       <li><a href=""> Approve Lesson Learnt</a></li>
                       <li><a href=""> Approve Risk Taxonomy</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#tables1" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#tables1" class="collapsed active"><span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">SE Process Group</span></a>
                   <ul class="sub-menu collapse" id="tables1">
                       <li><a href=""> Issue Tracker</a></li>
                       <li><a href=""> Risk Tracker</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#tables2" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#tables2" class="collapsed active"><span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">SE Process Group</span></a>
                   <ul class="sub-menu collapse" id="tables2">
                       <li><a href=""> Issue Tracker</a></li>
                       <li><a href=""> Risk Tracker</a></li>
                   </ul>
               </li>
               <li>
-                  <a href="#" data-toggle="collapse" data-target="#tables3" class="collapsed active"><span class="fa fa-chevron-right"></span> <span class="nav-label">SE Process Group</span></a>
+                  <a href="#" data-toggle="collapse" data-target="#tables3" class="collapsed active"><span class="fa fa-angle-down rotate-icon"></span> <span class="nav-label">SE Process Group</span></a>
                   <ul class="sub-menu collapse" id="tables3">
                       <li><a href=""> Issue Tracker</a></li>
                       <li><a href=""> Risk Tracker</a></li>
