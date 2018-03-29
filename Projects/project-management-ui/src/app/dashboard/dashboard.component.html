@@ -1,0 +1,7 @@
+<h1>Dashboard</h1>
+
+<ul>
+    <li *ngFor="let list of dashboardList" (click)="onSelect(list)">
+        <span class="badge">{{list.name}}</span>{{list.name}}
+    </li>
+</ul>
