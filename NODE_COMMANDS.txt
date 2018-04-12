@@ -31,5 +31,7 @@ npm install packagename --global/-g
 npm list -g
 npm uninstall packagename --global/-g
 
-npm instal --save-dev
-npm instal --save-prod
+npm instal packagename --save-dev/-D
+npm instal packagename --save-prod/-P
+npm instal packagename --save-optional/-O
+npm instal packagename --no-save
