@@ -1,0 +1,30 @@
+Node.js uses asynchronous programming!
+unifies the language and data format (JSON
+Node JS Commands
+
+node
+npm
+.exit
+npm search packagename
+npm view packagename | more
+npm view packagename version/versions
+
+npm list/ls
+
+npm install packagename
+npm install packagename@versionno
+npm uninstall packagename
+
+npm init
+npm init --force/-f/--yes/-y
+npm install packagename --save/-s
+npm uninstall packagename --save/-s
+npm outdated
+npm update packagename --save/-s
+
+npm install packagename --global/-g
+npm list -g
+npm uninstall packagename --global/-g
+
+npm instal --save-dev
+npm instal --save-prod
