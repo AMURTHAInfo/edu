@@ -1,5 +1,10 @@
 Node.js uses asynchronous programming!
-unifies the language and data format (JSON
+unifies the language and data format (JSON)
+Object-Oriented Programming without classes 
+MERN and MEAN stacks.
+every line of code you write can be in the same language.
+
+
 Node JS Commands
 
 node
