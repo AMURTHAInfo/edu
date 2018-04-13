@@ -1,0 +1,40 @@
+<div class="form-group">
+        <label>Filter </label>
+        <input  type="text"  id="inputName" [(ngModel)]="inputName"/>
+        <input type="button" (click)="FilterByName()" value="Apply"/>
+  </div>
+  <div class='row'>
+   <div class="panel panel-default">
+   <!-- Default panel contents -->
+   <div class='panel-heading'>Product List</div>
+   <div class='panel-body'>
+        <table class="table table-bordered table-condensed ">
+           <thead>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Description</th>
+           </thead>
+           <tbody>
+              <tr *ngFor="let item of items">
+                 <td>{{item.id}}</td>
+                 <td>{{item.name}}</td>
+                 <td>{{item.description}}</td>
+              </tr>
+           </tbody>
+        </table>
+        <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+         <div class="btn-group">
+              <label style="margin-top:10px">Page {{currentIndex}}/{{pageNumber}}</label>
+           </div>
+           <div class="btn-group pull-right">
+              <ul class="pagination" >
+                 <li [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}" ><a  (click)="prevPage()" href="#">Prev</a></li>
+                    <li *ngFor="let page of pagesIndex"  [ngClass]="{'active': (currentIndex == page)}">
+                       <a (click)="setPage(page)" href="#" >{{page}}</a>
+                    </li>
+                 <li [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}" ><a   (click)="nextPage()" href="#">Next</a></li>
+              </ul>
+           </div>
+        </div>
+     </div>
+  </div>

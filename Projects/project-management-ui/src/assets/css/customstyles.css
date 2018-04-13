@@ -1,0 +1,467 @@
+.tablebg{ background:#fff;}
+.adminHeading{ padding:0; display:inline-block;}
+.adminHeading h1{ font-size:20px; font-weight:normal; padding:0 103px;}
+
+.table-content{
+	margin:0 !important;
+	}
+	
+
+/*Login*/
+.login-container {
+    width: 583px;
+    margin: 0 auto;
+}
+.widget-form-container .widget-head {
+    background: #fbfbfb !important;
+    color: #063954;
+    padding: 10px 15px;
+    font-size: 17px;
+    height: 60px;
+    line-height: 44px;
+    text-transform: uppercase;
+    font-family: Helvetica, "Arial, sans-serif";
+}
+.widget-box, .widget-form-container .widget-box {
+    background-color: #f5f5f5!important;
+    padding: 15px;
+    border: 1px solid #eee;
+}
+
+.widget-body{
+	background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 1px #eaeaea;
+}
+
+.widget-main{
+	padding:30px;
+}
+
+.input-group{
+	width:100%;
+}
+
+.form-control{
+	border-radius:4px !important;
+	height: 34px !important;
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    line-height: 40px !important;
+    border: 1px solid #ddd;
+}
+textarea.form-control{
+	height: 100px !important;  line-height: 20px !important;
+}
+.space {
+    max-height: 1px;
+    min-height: 1px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+.widget-form-container .login-box .login-footer > div {
+    padding: 9px 0 11px;
+}
+
+.login-layout .widget-box .widget-main{
+    padding: 0px 20px 25px;
+}
+.widget-form-container .login-box .login-footer {
+    border-top: 1px solid #cadbfb;
+}
+                
+.login-layout label {
+                font-weight:normal;
+}
+.form-left-input-group .input-group-addon {
+    border-radius: 4px 0 0 4px ;
+    height: 26px ;
+    padding: 0 10px;
+}
+.login-footer a{
+                padding-left:15px;
+                font-size:12px;
+}
+.btn-login{
+    background-color: #0c7cd5;
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px;
+}
+.btn-login:hover, .btn-login:focus{
+                background-color:#33475b;
+                color:#fff;
+}
+
+.signin-checkbox{
+	margin-bottom:14px;
+}
+
+.widget-head{
+	margin:0;
+}
+
+@media (min-width: 768px) {
+    .filter-btn {
+        margin-top: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-btn {
+        margin-bottom: 15px;
+    }
+}
+
+
+
+.icon-btn {
+    padding: 0px 4px;
+    font-size: 12px;
+}
+
+
+
+.table th {
+    background: #337ab7;
+    color: #ffffff;
+    font-weight: 400;
+    border-color: #fff;
+}
+
+/*.table tr:first-child:hover {*/
+    /*background: none;*/
+/*}*/
+
+.table-footer {
+    background: #f8f8f8;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f2f2f2));
+    background: -webkit-linear-gradient(top, #f8f8f8, #f2f2f2);
+    background: -moz-linear-gradient(top, #f8f8f8, #f2f2f2);
+    background: -ms-linear-gradient(top, #f8f8f8, #f2f2f2);
+    background: -o-linear-gradient(top, #f8f8f8, #f2f2f2);
+    background: linear-gradient(to top, #f8f8f8, #f2f2f2);
+    border: solid #ddd;
+    border-width: 0 1px 1px 1px;
+    padding: 3px 5px 0 0;
+}
+
+.table .question-table {
+    margin-bottom: 0;
+    background-color: transparent;
+}
+
+.question-table > tbody > tr > td {
+    border: none;
+    padding: 0;
+}
+
+.bottom-margin-null {
+    margin-bottom: 0;
+}
+
+.table-footer .pagination {
+    margin: 0px;
+}
+
+.button-panel {
+    padding: 15px 0 0 0;
+}
+
+.btn-primary {
+    background: #D2527F;
+    border-color: #993a5c;
+}
+
+.btn-primary:hover, .btn-primary.active, .btn-primary:active, .btn-primary:focus {
+    background: #993a5c;
+    border-color: #993a5c;
+}
+
+.btn-secondary {
+    background: #EC644B;
+    border-color: #c2523d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #c2523d;
+    border-color: #c2523d;
+    color: #fff;
+}
+
+.cancel {
+    cursor: pointer;
+}
+
+.search-section {
+    margin-bottom: 15px;
+}
+
+.search-section .form-group {
+    display: inline-block;
+}
+
+.form-control.small-search {
+    width: 350px;
+}
+
+.control-label {
+    font-weight: 400;
+    margin-bottom:0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.fa-plus, .fa-times {
+    cursor: pointer;
+}
+
+.options ul {
+    padding-left: 0;
+}
+
+.form-group.required .control-label:after { 
+	content:"* ";
+	color: red; 
+}
+
+@media (min-width: 768px) {
+    .filter-btn {
+        margin-top: 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-btn {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 961px) {
+    .primary-nav > li > a {
+        padding: 15px 10px;
+    }
+}
+
+.options {
+    position: relative;
+    display: inline-block;
+}
+
+.options-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(222, 222, 222);
+    min-width: 160px;
+    padding: 12px 16px;
+}
+li:empty {   display: none; }
+
+.options:hover .options-content {
+    display: block;
+}
+.options-content
+{
+    z-index: 999;
+	
+}
+.options-content ul{
+	padding-left: 20px;
+
+	}
+.menudropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.mainmenu:hover .menudropbtn {
+    background-color: red;
+}
+
+
+.mainmenu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.mainmenu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+a:active {
+    background-color: red;
+} 
+.mainmenu-content a:hover {background-color: #f1f1f1}
+
+.mainmenu:hover .mainmenu-content {
+    display: block;
+}
+
+
+	
+/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  Admin section CSS xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+	
+.button-panel{
+	padding:0 !important;
+}
+
+.ui-widget-header{
+	text-shadow:none;
+	font-weight:normal;
+	background:transparent;
+	border:0;
+}
+
+.ui-datatable .ui-datatable-header{
+	text-align:left !important;
+}
+
+.ui-inputfield{
+	box-shadow:none !important;	
+	margin-left:10px;
+}
+
+.ui-outputpanel.ui-widget{
+	width:100%;
+	float:left;
+	background: #f1f1f1;
+	padding: 0 10px;
+}
+
+.ui-paginator{
+	float:right !important;
+	margin:-52px 0 0 0;
+	padding:0 !important;
+	padding: 0 14px;
+}
+
+.ui-state-default{
+	font-weight:normal !important;
+	text-shadow:none !important;
+	box-shadow:none !important;
+	margin:10px;
+}
+
+.ui-datatable .ui-datatable-header{
+	padding:0 !important;
+}
+
+/*Common Scroll*/
+
+.commonscroll{ padding: 15px;
+max-height: 409px;
+overflow: hidden;
+overflow-y: auto;}
+
+.home-row{
+	margin-right:0 !important;
+}
+
+.icon-btn.edit{
+	background:#337ab7;
+	color:#fff;
+	margin-left:2px;
+}
+
+.icon-btn.edit:hover{
+	background:#063954;
+}
+
+.icon-btn.delete{
+	color:#fff;
+}
+
+.ui-datatable thead th{
+	text-align:left;
+}
+
+.footer-row{
+	margin-bottom:0 !important;
+}
+
+.footer-row .btn-success.save{
+	margin-right:5px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 3px 20px !important;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover{
+	color:#fff !important;
+	text-decoration:none;
+	background-color:#0667D6 !important;
+}
+
+.add-question-btn, .excel-btn{
+	margin-bottom:0 !important;
+	padding-top:30px;
+}
+
+.add-question-btn .btn-success, .excel-btn .btn-success{
+	background:transparent;
+	border:none;
+	color:#257d25;
+	padding:0;
+	font-size:15px;
+}
+
+.add-question-btn .fa.fa-plus-circle, .excel-btn .fa.fa-file-excel-o {
+    float: left;
+    margin-top: 0px;
+    margin-right: 8px;
+    color:#257d25;
+    font-size:20px;
+}
+
+.add-question-btn .fa.fa-plus-circle{
+	margin-top:3px !important;
+}
+
+.fa-times-circle, .fa-plus-circle {
+    cursor:pointer;
+    font-size:18px !important;
+}
+
+.question-heading{
+	background:#f1f1f1 !important;
+}
+
+.cust-col{
+	width:20%;
+	float:left;
+	margin-right:12px;
+}
+
+.cust-col-btn{
+	width:18%;
+	float:left;
+}
+
+.formupload-common{
+	width:84%;
+}
+
+.formupload-common .form-upload{
+	float:right;
+	padding-top:20px;
+}
+
