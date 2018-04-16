@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router'
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardDetailsComponent } from './dashboard/dashboarddetails.component';
 import { CustomerComponent } from './customer/customer.component';
+import { LookupdataComponent } from './lookupdata/lookupdata.component';
 
 const routes:Routes=[
     {path:"dashboard",component:DashboardComponent},
     {path:"customer",component:CustomerComponent},
-    {path:"dashboarddetail/:id",component:DashboardDetailsComponent}
+    {path:"dashboarddetail/:id",component:DashboardDetailsComponent},
+    {path:"lookupdata",component:LookupdataComponent},
   ];
 
 
@@ -26,5 +28,6 @@ const routes:Routes=[
   export const routingComponents=[
     DashboardComponent,
     CustomerComponent,
-    DashboardDetailsComponent
+    DashboardDetailsComponent,
+    LookupdataComponent
   ]
