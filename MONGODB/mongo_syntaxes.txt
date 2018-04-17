@@ -1,0 +1,81 @@
+mogod.exe --dbpath "path"
+mongo.exe
+
+use DATABASE_NAME -- to create/use data base
+db -- to check which data base is using
+show dbs -- to list all the data bases
+db.movie.insert({"name":"tutorials point"}) -- to insert documents.
+db.dropDatabase() -- to drop the data base.
+
+db.createCollection(name, options)
+db.createCollection("mycollection") -- to create the collection
+db.createCollection("mycol", { capped : true, autoIndexId : true, size :6142800, max : 10000 } ) -- with options
+db.tutorialspoint.insert({"name" : "tutorialspoint"}) -- mongo db automatically creates collection
+db.test.save( { a: 1 } )
+db.COLLECTION_NAME.drop() -- to drop collection
+
+
+db.COLLECTION_NAME.insert(document)
+db.post.save(document) 
+db.post.insert([document,document]);
+db.mycol.insert({ "_id" : ObjectId("5a4f73501748a2f1823fe041"), "title" : "MongoDB Overview", "description" : "MongoDB is no sql database", "by" : "tutorials point", "url" : "http://www.tutorialspoint.com", "tags" :[ "mongodb", "database", "NoSQL" ], "likes" : 100 })
+
+############# MONOGO QUIERIES ###########################################################################################
+
+db.COLLECTION_NAME.find()
+db.COLLECTION_NAME.find().pretty()
+
+db.mycol.find({"by":"tutorials point"}).pretty() 	{<key>:<value>} 			-- Equality 
+db.mycol.find({"likes":{$lt:50}}).pretty()       	{<key>:{$lt:<value>}} 		-- Less Than
+db.mycol.find({"likes":{$lte:50}}).pretty()      	{<key>:{$lte:<value>}}		-- Less Than Equals
+db.mycol.find({"likes":{$gt:50}}).pretty()			{<key>:{$gt:<value>}}		-- Greater Than	
+db.mycol.find({"likes":{$gte:50}}).pretty()			{<key>:{$gte:<value>}}		-- Greater Than Equals
+db.mycol.find({"likes":{$ne:50}}).pretty()			{<key>:{$ne:<value>}}		-- Not Equals
+
+db.mycol.find({$and: [{key1: value1}, {key2:value2}]}).pretty();  -- AND
+db.mycol.find({$or: [{key1: value1}, {key2:value2}]}).pretty();  -- OR
+db.mycol.find({"likes": {$gt:10}, $or: [{"by": "tutorials point"},{"title": "MongoDB Overview"}]}).pretty()  -- AND & OR
+
+############# MONOGO UPDATE & SAVE ###########################################################################################
+
+db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}}) -- updates the values in the existing document 
+db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}},{multi:true}) -- updates for all 
+
+db.COLLECTION_NAME.save({_id:ObjectId("..."),NEW_DATA}) -- overwrites the matched document
+db.COLLECTION_NAME.remove(DELLETION_CRITTERIA) -- delet all the records
+db.COLLECTION_NAME.remove(DELETION_CRITERIA,1) -- delete only first record
+db.mycol.remove()  -- Delete whole documents from collection
+
+############# Limit & Sort ###########################################################################################
+
+db.COLLECTION_NAME.find({},{KEY:1})  -- to select the specified fields
+db.mycol.find({},{"title":1,_id:0})  
+db.COLLECTION_NAME.find().limit(NUMBER) -- to limit the number of records
+db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER) -- to skip the documents from top
+db.COLLECTION_NAME.find().sort({KEY:1})  -- ascending order
+db.COLLECTION_NAME.find().sort({KEY:-1})  -- desending order
+
+db.COLLECTION_NAME.ensureIndex({KEY:1})  -- create an index on fields
+db.mycol.ensureIndex({"title":1,"description":-1})
+
+############# Aggregation ###########################################################################################
+
+db.COLLECTION_NAME.aggregate(AGGREGATE_OPERATION)
+
+db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}])  --- Sums up the defined value
+db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}])  --- Calculates the average of all given values
+db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}])  --- Gets the minimum of the corresponding values
+db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$max : "$likes"}}}])  --- Gets the maximum of the corresponding values 
+db.mycol.aggregate([{$group : {_id : "$by_user", url : {$push: "$url"}}}])             --- Inserts the value to an array in the resulting document.
+db.mycol.aggregate([{$group : {_id : "$by_user", url : {$addToSet : "$url"}}}])        --- Inserts the value to an array in the resulting document but does not create duplicates
+db.mycol.aggregate([{$group : {_id : "$by_user", first_url : {$first : "$url"}}}])     --- Gets the first document from the source documents according to the grouping
+db.mycol.aggregate([{$group : {_id : "$by_user", last_url : {$last : "$url"}}}])       --- Gets the last document from the source documents according to the grouping.
+
+$project − Used to select some specific fields from a collection.
+$match − This is a filtering operation and thus this can reduce the amount of documents that are given as input to the next stage.
+$group − This does the actual aggregation as discussed above.
+$sort − Sorts the documents.
+$z − With this, it is possible to skip forward in the list of documents for a given amount of documents.
+$limit − This limits the amount of documents to look at, by the given number starting from the current positions.
+$unwind − This is used to unwind document that are using arrays. 
