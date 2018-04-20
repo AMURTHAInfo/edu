@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(eq, res){
+router.get('/', function(req, res){
+    console.log("here in router");
    res.send('GET route on things.');
 });
 
