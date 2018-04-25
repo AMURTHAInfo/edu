@@ -1,0 +1,137 @@
+Basic Types
+	- Boolean.
+	- Number.
+		- let decimal: number = 6;
+		- let hex: number = 0xf00d;
+		- let binary: number = 0b1010;
+		- let octal: number = 0o744;
+	- String
+	- Array
+		- let list: number[] = [1, 2, 3];
+		- let list: Array<number> = [1, 2, 3];
+	- Tuple [key , value]
+	- Enum
+	- Any
+	- Void
+	- Null 
+	- Undefined
+	- Never (exceptions) function that never return or unreachable code
+	
+##########################################################################
+
+Type assertions
+	- let someValue: any = "this is a string";
+		let strLength: number = (<string>someValue).length;
+	- let someValue: any = "this is a string";
+		let strLength: number = (someValue as string).length;
+		
+##########################################################################
+
+Variable Declarations
+	- var declarations
+		- Scoping rules
+		- var-scoping or function-scoping.
+		- Variable capturing quirks
+	- let declarations
+		- Block-scoping
+		- lexical-scoping or block-scoping. 
+		- Re-declarations and Shadowing
+		- Block-scoped variable capturing
+	- const declarations
+		- their value cannot be changed once they are bound.
+		- can’t re-assign to them.
+
+##########################################################################
+
+Destructuring
+	- Array destructuring
+		- let input = [1, 2];
+			let [first, second] = input;
+			let [first, ...rest] = [1, 2, 3, 4];
+			let [, second, , fourth] = [1, 2, 3, 4];
+			
+			Basic variable assignment 
+			Assignment separate from declaration
+			Default values
+			Swapping variables
+			Parsing an array returned from a function
+			Ignoring some returned values
+			Assigning the rest of an array to a variables
+			Unpacking values from a regular expression match
+			
+	- Object destructuring
+		let o = {
+			a: "foo",
+			b: 12,
+			c: "bar"
+		};
+		let { a, b } = o;
+		- ({ a, b } = { a: "baz", b: 101 });
+		- let { a, ...passthrough } = o;
+		- Property renaming 
+			- let { a: newName1, b: newName2 } = o;
+			- let { a, b }: { a: string, b: number } = o;
+		- Function declarations
+			- type C = { a: string, b?: number }
+			Basic assignment
+			Assignment without declaration
+			Assigning to new variable names
+			Default values
+			Assigning to new variables names and providing default values
+			Setting a function parameter's default value
+			Nested object and array destructuring
+			For of iteration and destructuring
+			Unpacking fields from objects passed as function parameter
+			Computed object property names and destructuring
+			Rest in Object Destructuring
+			Invalid JavaScript identifier as a property name
+
+			
+Spread
+	- opposite of destructuring
+	- let bothPlus = [0, ...first, ...second, 5];
+	- let search = { ...defaults, food: "rich" };
+	- properties that come later in the spread object overwrite properties that come earlier.
+	- lose methods when you spread instances of an object
+	- doesn’t allow spreads of type parameters from generic functions
+
+##########################################################################
+
+Interfaces
+	- Optional Properties
+	- Readonly properties
+		-  readonly x: number;
+		- let ro: ReadonlyArray<number> = a;
+		- Variables use const whereas properties use readonly.
+		- Excess Property Checks -  [propName: string]: any;
+		- Function Types
+		- Indexable Types
+		- Class Types
+##########################################################################
+
+
+
+##########################################################################
+
+
+##########################################################################
+
+
+
+##########################################################################
+
+
+
+##########################################################################
+
+
+
+##########################################################################
+
+
+##########################################################################
+
+
+
+##########################################################################
+		
