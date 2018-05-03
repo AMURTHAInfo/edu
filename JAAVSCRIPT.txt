@@ -398,3 +398,153 @@ Inheritance with the prototype chain
 	One misfeature that is often used is to extend Object.prototype or one of the other built-in prototypes.
 	This technique is called monkey patching and breaks encapsulation
 	is necessary to use the hasOwnProperty method which all objects inherit from Object.prototype.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#########################################################################################################################
+
+JavaScript is single threaded and has a synchronous execution model. Single threaded means that one command is being executed at a time. 
+Synchronous means one at a time i.e. one line of code is being executed at time in order the code appears. So in JavaScript one thing is happening at a time.
+
+Execution Context
+
+The JavaScript engine interacts with other engines in the browser. In the JavaScript execution stack there is global context at the bottom 
+and then when we invoke functions the JavaScript engine creates new execution contexts for respective functions. When the called function 
+exits its execution context is popped from the stack, and then next execution context is popped and so on...
+
+For example
+
+function abc()
+{
+   console.log('abc');
+}
+
+
+function xyz()
+{
+   abc()
+   console.log('xyz');
+}
+var one = 1;
+xyz();
+In the above code a global execution context will be created and in this context var one will be stored and its value will be 1...
+ when the xyz() invocation is called then a new execution context will be created and if we had defined any variable in xyz 
+ function those variables would be stored in the execution context of xyz(). In the xyz function we invoke abc() and then the 
+ abc() execution context is created and put on the execution stack... Now when abc() finishes its context is popped from stack,
+ then the xyz() context is popped from stack and then global context will be popped...
+
+Now about asynchronous callbacks; asynchronous means more than one at a time.
+
+Just like the execution stack there is the Event Queue. When we want to be notified about some event in the JavaScript engine
+ we can listen to that event, and that event is placed on the queue. For example an Ajax request event, or HTTP request event.
+
+Whenever the execution stack is empty, like shown in above code example, the JavaScript engine periodically looks at the event 
+queue and sees if there is any event to be notified about. For example in the queue there were two events, an ajax request and 
+a HTTP request. It also looks to see if there is a function which needs to be run on that event trigger... So the JavaScript engine 
+is notified about the event and knows the respective function to execute on that event... So the JavaScript engine 
+invokes the handler function, in the example case, e.g. AjaxHandler() will be invoked and like always when a 
+function is invoked its execution context is placed on the execution context and now the function execution finishes 
+and the event ajax request is also removed from the event queue... When AjaxHandler() finishes the execution stack is empty 
+so the engine again looks at the event queue and runs the event handler function of HTTP request which was next in queue. 
+It is important to remember that the event queue is processed only when execution stack is empty.
+
+For example see the code below explaining the execution stack and event queue handling by Javascript engine.
+
+function waitfunction() {
+    var a = 5000 + new Date().getTime();
+    while (new Date() < a){}
+    console.log('waitfunction() context will be popped after this line');
+}
+
+function clickHandler() {
+    console.log('click event handler...');   
+}
+
+document.addEventListener('click', clickHandler);
+
+
+waitfunction(); //a new context for this function is created and placed on the execution stack
+console.log('global context will be popped after this line');
+And
+
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <script src="program.js"></script>
+    </body>
+</html>
+Now run the webpage and click on the page, and see the output on console. The output will be
+
+waitfunction() context will be popped after this line
+global context will be emptied after this line
+click event handler...
+The JavaScript engine is running the code synchronously as explained in the execution context portion, the browser is asynchronously putting things in event
+ queue. So the functions which take a very long time to complete can interrupt event handling. Things happening in a browser 
+ like events are handled this way by JavaScript, if there is a listener supposed to run, the engine will run it when the execution
+ stack is empty. And events are processed in the order they happen, so the asynchronous part is about what is happening outside the engine 
+ i.e. what should the engine do when those outside events happen.
+
+So JavaScript is always synchronous.
+
+####################################################################################
+Synchronous/Asynchronous HAS NOTHING TO DO WITH MULTI-THREADING.
+
+Synchronous, or Synchronized means "connected", or "dependent" in some way. In other words, two synchronous tasks must be aware of one another, 
+and one task must execute in some way that is dependent on the other, such as wait to start until the other task has completed.
+Asynchronous means they are totally independent and neither one must consider the other in any way, either in initiation or in execution.
+
+Synchronous (one thread):
+
+1 thread ->   |<---A---->||<----B---------->||<------C----->|
+Synchronous (multi-threaded):
+
+thread A -> |<---A---->|   
+                        \  
+thread B ------------>   ->|<----B---------->|   
+                                              \   
+thread C ---------------------------------->   ->|<------C----->| 
+Asynchronous (one thread):
+
+         A-Start ------------------------------------------ A-End   
+           | B-Start -----------------------------------------|--- B-End   
+           |    |      C-Start ------------------- C-End      |      |   
+           |    |       |                           |         |      |
+           V    V       V                           V         V      V      
+1 thread->|<-A-|<--B---|<-C-|-A-|-C-|--A--|-B-|--C-->|---A---->|--B-->| 
+Asynchronous (multi-Threaded):
+
+ thread A ->     |<---A---->|
+ thread B ----->     |<----B---------->| 
+ thread C --------->     |<------C--------->|
+Start and end points of tasks A, B, C represented by <, > characters.
+CPU time slices represented by vertical bars |
+Technically, the concept of synchronous/asynchronous really does not have anything to do with threads. Although, in general,
+ it is unusual to find asynchronous tasks running on the same thread, it is possible, (see below for examples) and it is common to find
+ two or more tasks executing synchronously on separate threads... No, the concept of synchronous/asynchronous has to do solely with whether 
+ or not a second or subsequent task can be initiated before the other (first) task has completed, or whether it must wait. That is all.
+ What thread (or threads), or processes, or CPUs, or indeed, what hardware, the task[s] are executed on is not relevant. Indeed, 
+ to make this point I have edited the graphics to show this.
+
+ASYNCHRONOUS EXAMPLE. In solving many engineering problems, the software is designed to split up the overall problem into multiple individual tasks, 
+and then execute them asynchronously. Inverting a matrix, or a finite element analysis problem, are good examples. In computing, sorting a list is an 
+example. The quick sort routine, for example, splits the list into two lists, and sorts each of them by calling itself recursively. In both of the 
+above examples, the two tasks can (and often were) executed asynchronously. They do not need to be on separate threads. Even a machine with one CPU,
+ and only one thread of execution can be coded to initiate processing of a second task before a first one has completed. The only criterion is that 
+ the results of one task are not necessary as inputs to the other task. As long as the start and end times of the tasks overlap, (possible only if the 
+ output of neither is needed as inputs to the other), they are being executed asynchronously, no matter how many threads are in use.
+
+SYNCHRONOUS EXAMPLE. Any process consisting of multiple tasks where the tasks must be executed in sequence, but one must be executed on 
+another machine (Fetch and/or update data, get a stock quote from a financial service, etc.). If it's on a separate machine
+ it is on a separate thread, whether synchronous or asynchronous.
