@@ -11,7 +11,18 @@ Javascript Functions
 	inner functions can be assigned to outer functions
 	Array elements can be functions too
 	Events can be attached to the functions event handlers.
+	
+	Function.prototype.apply() The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+	Function.prototype.bind()  The bind() method creates a new function that, when called, has its this keyword set to the provided value,
+	Function.prototype.call()  The call() method calls a function with a given this value and arguments provided individually.
+	
+	Note: While the syntax of this function is almost identical to that of call(), the fundamental difference is that call() accepts an argument list, 
+	while apply() accepts a single array of arguments.
 
+	A function can refer to and call itself. There are three ways for a function to refer to itself:
+		the function's name
+		arguments.callee
+		an in-scope variable that refers to the function
 JavaScript Objects
 	new Object();
 	{}
@@ -376,3 +387,14 @@ JavaScript Use Strict
 	public
 	static
 	yield
+	
+Inheritance with the prototype chain
+
+	Following the ECMAScript standard, the notation someObject.[[Prototype]] is used to designate the prototype of someObject. 
+	Since ECMAScript 2015, the [[Prototype]] is accessed using the accessors Object.getPrototypeOf() and Object.setPrototypeOf(). 
+	This is equivalent to the JavaScript property __proto__ which is non-standard but de-facto implemented by many browsers.
+	f.prototype.b = 3;
+	var p = Object.create(o);
+	One misfeature that is often used is to extend Object.prototype or one of the other built-in prototypes.
+	This technique is called monkey patching and breaks encapsulation
+	is necessary to use the hasOwnProperty method which all objects inherit from Object.prototype.
