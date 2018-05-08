@@ -548,3 +548,64 @@ above examples, the two tasks can (and often were) executed asynchronously. They
 SYNCHRONOUS EXAMPLE. Any process consisting of multiple tasks where the tasks must be executed in sequence, but one must be executed on 
 another machine (Fetch and/or update data, get a stock quote from a financial service, etc.). If it's on a separate machine
  it is on a separate thread, whether synchronous or asynchronous.
+ 
+ 
+ 
+ 
+ /* 
+ * Enter your code here. Read input from STDIN. Print your output to STDOUT. 
+ * Your class should be named CandidateCode.
+*/
+
+import java.io.*;
+import java.util.*;
+public class CandidateCode {
+    public static void main(String args[] ) throws Exception {
+
+    	// Using Scanner for Getting Input from User
+        Scanner in = new Scanner(System.in);
+ 
+        String a = in.nextLine();
+        String b = in.nextLine();
+        String c = in.nextLine();
+        String d = in.nextLine();
+        
+        int movPos[]=getIntArray(a);
+        int lad1Pos[]=getIntArray(b);
+        int lad2Pos[]=getIntArray(c);
+        int lad3Pos[]=getIntArray(d);
+        
+   }
+   
+   public int[] getIntArray(String s){
+        String[] words=s.split("\\s");//splits the string based on whitespace  
+        int intArray[]=new int[words.length];
+        for(int i=0;i<words.length;i++){  
+            intArray[i]=Integer.parseInt(words[i]);  
+        }  
+        return intArray;
+   }
+   
+   public getMinDist(){
+       boolean ntreached=true;
+     
+           if(movPos[0] == movPos[2] && movPos[1] == movPos[3]){
+               dist=0;
+           }
+           else{
+                   int horDir=movPos[2] - movPos[0] ;
+                   int verDir=movPos[3] - movPos[1] ;
+                   if(horDir < 0){
+                       
+                   }
+                   if(verDir < 0){
+                       
+                   }
+                   while(ntreached){
+                        if(movPos[0] == movPos[2] && movPos[1] == movPos[3]){
+                            dist=dist++;
+                        }
+                   }
+           }
+   }
+}
