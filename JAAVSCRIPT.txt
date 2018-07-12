@@ -23,6 +23,7 @@ Javascript Functions
 		the function's name
 		arguments.callee
 		an in-scope variable that refers to the function
+		Promise()
 JavaScript Objects
 	new Object();
 	{}
